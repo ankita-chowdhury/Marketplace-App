@@ -1,0 +1,42 @@
+#root {
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.inner-container{
+  /* border: 1px solid rgba(0,0,0,0.5); */
+  min-height: 450px;
+  width: 404px;
+  gap: 10px;
+  border-radius: 10px;
+  align-content: center;
+}
+.heading-container h2{
+ color: #3A5B22;
+  
+}
+.login-form{
+  text-align: left;
+  padding: 10px;
+  color: black;
+}
+.input-div input{
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-top: 7px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+.login-btn{
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.login-btn button{
+  width: 100%;
+  background-color: #3A5B22;
+  color: white;
+}
