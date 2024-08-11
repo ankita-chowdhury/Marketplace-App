@@ -26,6 +26,15 @@
       "dateOfBirth": "",
       "address": "",
       "contactNo": ""
+    },
+    {
+      "id": "8e65",
+      "username": "abcd",
+      "email": "abcd@gmail.com",
+      "password": "abcd",
+      "dateOfBirth": "",
+      "address": "",
+      "contactNo": ""
     }
   ],
   "products": [

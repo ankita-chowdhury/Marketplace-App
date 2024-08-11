@@ -1,8 +1,10 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const Profile = () => {
   return (
-    <div>
+    <div className='box-container'>
+      <Navbar/>
       Profile
     </div>
   )

@@ -1,6 +1,5 @@
 #root {
   width: 100%;
-  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -39,4 +38,90 @@
   width: 100%;
   background-color: #3A5B22;
   color: white;
+}
+.err-container{
+  padding: 10px;
+}
+.error-msg{
+  width: auto;
+  color: red;
+  padding: 10px;
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: rgba(255, 0, 0, 0.275);
+  
+}
+.nav-component{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0px 0px 4px 0px #3A5B22;
+}
+.box-container{
+  width: 100%;
+  height: 100vh;
+}
+.nav-component{
+  padding: 1rem;
+}
+.nav-link a{
+  margin: 10px;
+  font-size: 1.5 rem;
+}
+.logo-container p{
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color: #3A5B22;
+}
+.logo-icon{
+  padding: 5px 6px;
+  background-color: #3A5B22;
+  color: white;
+  border-radius: 20px;
+  margin-right: 2px;
+}
+.search-container{
+  width: 20%;
+  min-width: 200px;
+  padding: 5px;
+  display: flex;
+  border: 1px solid #3A5B22;
+  border-radius: 15px;
+}
+.search-container img{
+  width: 30px;
+}
+.search-container input{
+  width:90%;
+  padding: 7px;
+  border: none;
+}
+.search-container input:focus-visible,
+.search-container input:active,
+.search-container input:hover {
+  border: none;
+  outline: none;
+}
+.profile-icon img{
+  height: 35px;
+}
+.logout-div{
+  position: absolute;
+  min-width: 120px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px 0px #3A5B22;
+  margin-top: 2rem;
+  padding: 20px;
+  right: 6.5%;
+}
+.logout-div img{
+  height: 25px;
+  margin: 0px 5px;
+}
+.logout-div p{
+  display: flex;
+
 }

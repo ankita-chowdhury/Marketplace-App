@@ -1,8 +1,10 @@
 import React from 'react'
+import Navbar from './Navbar'
 
 const Transaction = () => {
   return (
-    <div>
+    <div className='box-container'>
+      <Navbar/>
       Transaction
     </div>
   )

@@ -5,6 +5,7 @@ import axios from 'axios';
 const SignUp = () => {
     const navigate = useNavigate();
     const[userData,setUserData]=useState([]);
+    const[errMsg,setErrMsg]=useState("");
     const[user,setUser]=useState({
         username: "",
         email: "",
@@ -33,22 +34,30 @@ const SignUp = () => {
     }
 
     const handleSignUp = async() =>{
-        try{
-            const tempUserData=await axios.get(`http://localhost:4500/users?email=${user.email}`);
-            if(tempUserData.data.length===0){
-                const response=await axios.post(`http://localhost:4500/users`,user);
-            console.log("response",response);
-            const localData={user:user.username,email:user.email};
-            localStorage.setItem('loginKey',JSON.stringify(localData));
-            navigate('/home');
+        if(user.username!=="" && user.email!=="" && user.password!==""){
+            try{
+                const tempUserData=await axios.get(`http://localhost:4500/users?email=${user.email}`);
+                if(tempUserData.data.length===0){
+                    const response=await axios.post(`http://localhost:4500/users`,user);
+                console.log("response",response);
+                const localData={user:user.username,email:user.email};
+                localStorage.setItem('loginKey',JSON.stringify(localData));
+                navigate('/home');
+                }
+                else{
+                    setErrMsg("User already exist! try to Sign in");
+                }
+            } 
+            catch(e){
+                setErrMsg("Something went wrong! Please try again");
             }
-            else{
-                console.log("user already exist!");
-            }
-        } 
-        catch(e){
-            console.log(e);
         }
+        else{
+            setErrMsg("Username, Email and Password should not be blank!")
+        }
+        setTimeout(()=>{
+            setErrMsg("");
+        },4000);
     }
 
   return (
@@ -56,6 +65,7 @@ const SignUp = () => {
         <div className="inner-container">
             <div className="heading-container">
                 <h2>Get Started Now</h2>
+                {errMsg!=="" && <div className="err-container"><div className="error-msg">{errMsg}</div ></div>}
             </div>
             <div className="login-form">
                     <label htmlFor="username">Name</label>
