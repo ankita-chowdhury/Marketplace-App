@@ -64,7 +64,12 @@ const SignUp = () => {
     <div className="outer-container">
         <div className="inner-container">
             <div className="heading-container">
-                <h2>Get Started Now</h2>
+            <div className='logo-container'>
+              <p>
+              <span className='logo-icon'>go</span>
+              Mart
+              </p>
+            </div>
                 {errMsg!=="" && <div className="err-container"><div className="error-msg">{errMsg}</div ></div>}
             </div>
             <div className="login-form">

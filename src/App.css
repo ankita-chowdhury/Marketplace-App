@@ -15,7 +15,10 @@
 }
 .heading-container h2{
  color: #3A5B22;
-  
+  border: 1px solid #3A5B22;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #45873e85;
 }
 .login-form{
   text-align: left;
@@ -124,4 +127,7 @@
 .logout-div p{
   display: flex;
 
+}
+.welcome-msg{
+  padding: 15px;
 }

@@ -63,8 +63,14 @@ const checkLogin = async() =>{
     <div className="outer-container">
         <div className="inner-container">
             <div className="heading-container">
-                <h2>Welcome Back!</h2>
-                <p>Enter Your Credentials to access your account</p>
+            <div className='logo-container'>
+              <p>
+              <span className='logo-icon'>go</span>
+              Mart
+              </p>
+            </div>
+                <div className="welcome-msg"><h2>Welcome Back!</h2></div>
+                <p>Enter Your Credentials to access your account!</p>
                 {errMsg!=="" && <div className="err-container"><div className="error-msg">{errMsg}</div ></div>}
             </div>
             <div className="login-form">
