@@ -59,7 +59,7 @@
   justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
-  box-shadow: 0px 0px 4px 0px #3A5B22;
+  box-shadow: 0px 0px 4px 0px #3A5B22 !important;
   background-color: #fff ;
 }
 .box-container{
@@ -70,11 +70,11 @@
   padding: 1rem;
 }
 .nav-link a{
-  margin: 10px;
-  font-size: 1.5 rem;
+  margin: 10px !important;
+  font-size: 1.5 rem !important;
 }
 .logo-container p{
-  font-size: 2rem;
+  font-size: 2rem !important;
   font-weight: 700;
   margin: 0;
   padding: 0;
@@ -243,7 +243,7 @@
 .sort-by label {
   color: #3A5B22;
   margin-right: 10px; /* Space between the label and the select */
-  font-size: 16px; /* Match the font size with other elements */
+  font-size: 16px !important; /* Match the font size with other elements */
 }
 
 .sort-by select {
@@ -251,8 +251,59 @@
   background-color: transparent;
   border: none;
   padding: 5px;
-  font-size: 16px;
+  font-size: 16px !important;
   cursor: pointer;
 }
-
+.add-and-sort-section{
+  display: flex;
+  align-items: center;
+}
+.add-item{
+  padding: 2.5px 5px 2.5px 15px;
+  margin-right: 5px;
+  border: 1px dashed #3A5B22;
+  border-radius: 10px;
+  color: #3A5B22; 
+}
+.add-item span{
+  background-color: #3A5B22;
+  color: #fff;
+  font-size: 23px !important;
+  padding: 0px 7px 2px 7px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+.modal{
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* border: 1px solid black; */
+  width: 100vw;
+  height: 100vh;
+  z-index: 9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3d443721;
+}
+.modal-box-container{
+  border-radius: 5px;
+  margin: 10px;
+  width: 50%;
+  text-align: left;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px 0px #3A5B22;
+  padding: 20px 40px;
+  background-color: #fff;
+  color: #3A5B22;
+}
+.modal-heading{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.modal-heading span{
+  border: 1px solid #3A5B22;
+}
 

@@ -10,6 +10,8 @@ const Home = () => {
     const[productItem,setProductItem]=useState([]);
     const[filteredProducts,setFilteredProducts]=useState([]);
     const[userDetails,setUserDetails]=useState({});
+    const[showAddItem,setShowAddItem]=useState(false);
+    const[modalShow,setModalShow]=useState(false);
     useEffect(()=>{
         const loginKey=localStorage.getItem('loginKey');
         if(!loginKey){
@@ -48,10 +50,12 @@ const Home = () => {
             console.log("check",userDetails.id);
             const tempProducts=productItem.filter((item)=>item.sellerId===userDetails.id);
             setFilteredProducts(tempProducts);
+            setShowAddItem(true);
           }
           else if(inputName==="productList"){
             const tempProducts=productItem.filter((item)=>item.sellerId!==userDetails.id);
             setFilteredProducts(tempProducts);
+            setShowAddItem(false);
           }
       }
 
@@ -81,6 +85,15 @@ const Home = () => {
         setFilteredProducts(tempProducts);
       }
 
+      const handleModalShow = () =>{
+        if(modalShow===true){
+          setModalShow(false);
+        }
+        else if(modalShow===false){
+          setModalShow(true);
+        }
+      }
+
   return (
     <div className='box-container'>
       <Navbar/>
@@ -90,6 +103,8 @@ const Home = () => {
           <button onClick={()=>handleFilter("productList","")}>Products List</button>
           <button onClick={()=>handleFilter("myitems","")}>My Products</button>
         </div>
+        <div className='add-and-sort-section'>
+        {showAddItem && <div className="add-item" role='button' onClick={()=>handleModalShow()}>Add Item <span>+</span></div>}
         <div className="sort-by">
           <label htmlFor="sortOptions">Sort by:</label>
           <select name="Sort by" id="sortOptions" onChange={(e)=>handleSortBy(e.target.value)}>
@@ -97,8 +112,9 @@ const Home = () => {
           <option value="highToLow">Price: High to Low</option>
           <option value="newFirst">New First</option>
           <option value="oldItems">Old First</option>
-  </select>
-</div>
+      </select>
+        </div>
+        </div>
 
       </div>
       <div className="dasboard-container">
@@ -111,7 +127,15 @@ const Home = () => {
           })}
         </div>
       </div>
-    </div>
+      {modalShow && <div className="modal" tabindex="-1" role="dialog">
+        <div className="modal-box-container" role="document">
+            <div className="modal-heading">
+                  <h4>Add Item</h4>
+                  <span onClick={()=>handleModalShow()}>x</span>
+            </div>
+          </div>
+      </div>}
+      </div>
   )
 }
 
