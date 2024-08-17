@@ -213,3 +213,46 @@
   color: #fff;
   background-color: #d53a2f;
 }
+.top-section{
+    margin: 20px 0px 10px 0px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 4px 0px #3A5B22;
+    background-color: #fff ;
+}
+.select-section button{
+  color: #3A5B22;
+  background-color: transparent;
+  border: none;
+  margin: 10px;
+}
+.sort-by {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #3A5B22;
+  background-color: #fff;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+.sort-by label {
+  color: #3A5B22;
+  margin-right: 10px; /* Space between the label and the select */
+  font-size: 16px; /* Match the font size with other elements */
+}
+
+.sort-by select {
+  color: #3A5B22;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+

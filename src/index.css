@@ -64,3 +64,6 @@ button:hover {
     background-color: #f9f9f9;
   }
 }
+select:focus-visible{
+  outline: #3A5B22;
+}
