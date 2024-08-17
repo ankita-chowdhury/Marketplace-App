@@ -59,6 +59,28 @@ const Home = () => {
         filterItems(inputName,cateGory);
       }
 
+      const handleSortBy = (inputFieldVal) =>{
+        console.log("inputVal",inputFieldVal);
+        sortByItems(inputFieldVal);
+      }
+
+      const sortByItems = (inputFieldVal) =>{
+        const tempProducts = [...filteredProducts];
+        if(inputFieldVal==="lowToHigh"){
+          tempProducts.sort((a,b)=>a.price-b.price);
+        }
+        else if(inputFieldVal==="highToLow"){
+          tempProducts.sort((a,b)=>b.price-a.price);
+        }
+        else if(inputFieldVal==="newFirst"){
+          tempProducts.sort((a,b)=>new Date(a.productListingDate) - new Date(b.productListingDate));
+        }
+        else if(inputFieldVal==="oldFirst"){
+          tempProducts.sort((a,b)=>new Date(b.productListingDate) - new Date(a.productListingDate));
+        }
+        setFilteredProducts(tempProducts);
+      }
+
   return (
     <div className='box-container'>
       <Navbar/>
@@ -70,11 +92,11 @@ const Home = () => {
         </div>
         <div className="sort-by">
           <label htmlFor="sortOptions">Sort by:</label>
-          <select name="Sort by" id="sortOptions">
-          <option value="">Price: Low to High</option>
-          <option value="">Price: High to Low</option>
-          <option value="">New First</option>
-          <option value="">Old First</option>
+          <select name="Sort by" id="sortOptions" onChange={(e)=>handleSortBy(e.target.value)}>
+          <option value="lowToHigh">Price: Low to High</option>
+          <option value="highToLow">Price: High to Low</option>
+          <option value="newFirst">New First</option>
+          <option value="oldItems">Old First</option>
   </select>
 </div>
 
