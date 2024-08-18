@@ -114,7 +114,8 @@
       "sellerId": "S002",
       "buyerId": "B001",
       "soldFlag": true,
-      "productListingDate": "2024-07-25"
+      "productListingDate": "2024-07-25",
+      "id": "6fde"
     },
     {
       "productId": "P006",
@@ -127,7 +128,8 @@
       "sellerId": "S003",
       "buyerId": null,
       "soldFlag": false,
-      "productListingDate": "2024-07-28"
+      "productListingDate": "2024-07-28",
+      "id": "9c0a"
     },
     {
       "productId": "P007",
@@ -140,7 +142,8 @@
       "sellerId": "S001",
       "buyerId": "B002",
       "soldFlag": true,
-      "productListingDate": "2024-08-01"
+      "productListingDate": "2024-08-01",
+      "id": "efbf"
     },
     {
       "productId": "P008",
@@ -153,7 +156,8 @@
       "sellerId": "S002",
       "buyerId": null,
       "soldFlag": false,
-      "productListingDate": "2024-08-05"
+      "productListingDate": "2024-08-05",
+      "id": "5c0b"
     },
     {
       "productId": "P009",
@@ -166,7 +170,8 @@
       "sellerId": "S003",
       "buyerId": "B003",
       "soldFlag": true,
-      "productListingDate": "2024-08-08"
+      "productListingDate": "2024-08-08",
+      "id": "feab"
     },
     {
       "productId": "P010",
@@ -179,7 +184,36 @@
       "sellerId": "S001",
       "buyerId": null,
       "soldFlag": false,
-      "productListingDate": "2024-08-10"
+      "productListingDate": "2024-08-10",
+      "id": "8b66"
+    },
+    {
+      "id": "4967",
+      "productId": "",
+      "productName": "flower vase",
+      "productImg": "https://m.media-amazon.com/images/I/619vvcyPS4L.jpg",
+      "productDescription": "Japanese flower vase ",
+      "price": "500",
+      "category": "Home Decor & Lights",
+      "rating": 0,
+      "sellerId": "e9f4",
+      "buyerId": null,
+      "soldFlag": false,
+      "productListingDate": "18-08-2024"
+    },
+    {
+      "id": "a77d",
+      "productId": "",
+      "productName": "flower vase2",
+      "productImg": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxISEhUSEhMVFRUVFRUVFxUVFRcVFRUVFRUWFhUVFRUYHSggGBolHRUVITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0lHyUrLS0tLS0tKy0tLS0tLS0tLSsrLy0tLy8tLSstLS0vLS0tLS8rLS0wLS01NS8vKy03Mv/AABEIAOMA3gMBIgACEQEDEQH/xAAbAAACAwEBAQAAAAAAAAAAAAAEBQIDBgEAB//EAD4QAAEDAgQDBQYDBgUFAAAAAAEAAhEDBAUSITFBUWEGEyJxkRQVMoGhsUJSwRYjctHw8QdigpLhM1OissL/xAAbAQEBAQEBAQEBAAAAAAAAAAAAAQIDBQYEB//EACsRAAICAQMDAgUFAQAAAAAAAAABAhEDEiExBAVBE1EicZGh8BUjMmGBFP/aAAwDAQACEQMRAD8A1vueHdFdVtA0J48aSl982Roo0BOKYdsmeFWmqhQogeiY4fusoBdS002S2vadFoY0QdRq00BE211Tm0sRGyHe0SE3tNkSoFHsgHAKw0BlU7l8JLdY8xsjNqtIGU7aWIkOG6V4Jfd2YKOx3Eu9OmyQM0Mp5KbupiQLeSyWL1C98jYLRYZhwe1uYzIU8RwlgaSBBEpuQyja7gN0wwTE+7MO25oCuwAwqNlm6BtHXrHNMFRtmZtN1mbepputj2ZALJO5MLomAS6pFqNwuz/GdymV9bghVMrBoVARcOACT3tWASEHeYpmceQQOJYoIyjcqWCqlib88kyFobXFMw0SmwsA4BNbPDsqIFrqhco1aRI0RXsqIt7ZUGRxGpUYQeSvt8cEalaLEcMBaZC+dXtLI9zeRWHaB9DuL5uXRKn3hJXKNGVcbSFz3BT7UUwwYkkkpc5qZYINSi5BoiYCWXFYgpjUbLUnuKBWmCk3BlN7K501WbqUXApvYMcAsxe9FD72HBfLO0dEsrGDuvpVy+AVg",
+      "productDescription": "bla bla bla bla",
+      "price": "3466",
+      "category": "Home Decor & Lights",
+      "rating": 0,
+      "sellerId": "e9f4",
+      "buyerId": null,
+      "soldFlag": false,
+      "productListingDate": "18-08-2024"
     }
   ],
   "transactionHistory": [
@@ -228,8 +262,9 @@
       "sellerId": "U003",
       "buyerId": null,
       "productListingDate": "2024-08-05",
-      "productPurchaseDate": null
-    },    
+      "productPurchaseDate": null,
+      "id": "8c0d"
+    },
     {
       "transactionId": "T005",
       "productId": "P005",
@@ -239,7 +274,8 @@
       "sellerId": "S002",
       "buyerId": "B001",
       "productListingDate": "2024-07-25",
-      "productPurchaseDate": "2024-07-30"
+      "productPurchaseDate": "2024-07-30",
+      "id": "dc19"
     },
     {
       "transactionId": "T006",
@@ -250,7 +286,8 @@
       "sellerId": "S003",
       "buyerId": null,
       "productListingDate": "2024-07-28",
-      "productPurchaseDate": null
+      "productPurchaseDate": null,
+      "id": "1c10"
     },
     {
       "transactionId": "T007",
@@ -261,7 +298,8 @@
       "sellerId": "S001",
       "buyerId": "B002",
       "productListingDate": "2024-08-01",
-      "productPurchaseDate": "2024-08-03"
+      "productPurchaseDate": "2024-08-03",
+      "id": "9ec3"
     },
     {
       "transactionId": "T008",
@@ -272,7 +310,8 @@
       "sellerId": "S002",
       "buyerId": null,
       "productListingDate": "2024-08-05",
-      "productPurchaseDate": null
+      "productPurchaseDate": null,
+      "id": "db4e"
     },
     {
       "transactionId": "T009",
@@ -283,7 +322,8 @@
       "sellerId": "S003",
       "buyerId": "B003",
       "productListingDate": "2024-08-08",
-      "productPurchaseDate": "2024-08-12"
+      "productPurchaseDate": "2024-08-12",
+      "id": "8cb3"
     },
     {
       "transactionId": "T010",
@@ -294,7 +334,8 @@
       "sellerId": "S001",
       "buyerId": null,
       "productListingDate": "2024-08-10",
-      "productPurchaseDate": null
+      "productPurchaseDate": null,
+      "id": "f339"
     }
   ]
 }
