@@ -133,6 +133,40 @@ const Home = () => {
                   <h4>Add Item</h4>
                   <span onClick={()=>handleModalShow()}>x</span>
             </div>
+            <div className="modal-body">
+              <label htmlFor="item-name">Product Name</label>
+              <div>
+                <input type="text" id='item-name' placeholder='Enter product name'/>
+              </div>
+              <label htmlFor="item-price">Product Price</label>
+              <div>
+                <input type="text" id='item-price' placeholder='Enter product price'/>
+              </div>
+              <div className='select-category'>
+                <label htmlFor="product-category">Product Category: </label>
+                <select name="" id="product-category">
+                  <option value="Electronics">Electronics</option>
+                  <option value="Clothes">Clothes</option>
+                  <option value="Audio Product">Audio Product</option>
+                  <option value="Gaming Product">Gaming Product</option>
+                  <option value="Household Appliances">Household Appliances</option>
+                  <option value="Home Decor & Lights">Home Decor & Lights</option>
+                  <option value="Smartphone">Smartphone</option>
+                </select>
+              </div>
+              <label htmlFor="item-desc">Product Description</label>
+              <div>
+                <textarea name="" id='item-desc' placeholder='Enter product description...'/>
+              </div>
+              <label htmlFor="item-img">Product Image</label>
+              <div>
+                <input type="text" id='item-img' placeholder='Enter product image-url'/>
+              </div>
+              <div className="add-item-form-btn">
+                <button className='add-btn-save'>Add</button>
+                <button className='add-btn-cancel'>Cancel</button>
+              </div>
+            </div>
           </div>
       </div>}
       </div>

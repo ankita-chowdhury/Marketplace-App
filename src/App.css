@@ -25,7 +25,7 @@
   padding: 10px;
   color: black;
 }
-.input-div input{
+.input-div input,.modal-body input, .modal-body textarea{
   width: calc(100% - 20px);
   padding: 10px;
   margin-top: 7px;
@@ -178,19 +178,38 @@
   display: flex;
   justify-content: space-between;
 }
+.add-item-form-btn{
+  margin: 20px 0px;
+  text-align: right;
+}
+.add-item-form-btn button{
+  margin: 5px;
+  padding: 10px 30px;
+  border-radius: 25px;
+}
 .btn-div button{
   margin: 5px;
   border-radius: 25px;
   width: 45%;
 }
-.add-to-cart{
+.add-to-cart,.add-btn-save{
   background-color: #3A5B22;
   color: #fff;
 }
-.view-details{
+.add-btn-save:hover{
+  background-color: #fff;
+  color: #3A5B22;
+  border: 1px solid #3A5B22;
+}
+.view-details,.add-btn-cancel{
   background-color: #fff;
   color: #3A5B22;
   border: 1px dashed #3A5B22;
+}
+.add-btn-cancel:hover{
+  background-color: #3A5B22;
+  color: #fff;
+  border: 1px solid transparent;
 }
 .product-price{
   display: flex;
@@ -229,7 +248,7 @@
   border: none;
   margin: 10px;
 }
-.sort-by {
+.sort-by{
   margin: 10px;
   display: flex;
   align-items: center;
@@ -240,7 +259,7 @@
   border-radius: 10px;
 }
 
-.sort-by label {
+.sort-by label  {
   color: #3A5B22;
   margin-right: 10px; /* Space between the label and the select */
   font-size: 16px !important; /* Match the font size with other elements */
@@ -263,7 +282,8 @@
   margin-right: 5px;
   border: 1px dashed #3A5B22;
   border-radius: 10px;
-  color: #3A5B22; 
+  color: #3A5B22;
+  cursor: pointer; 
 }
 .add-item span{
   background-color: #3A5B22;
@@ -289,7 +309,8 @@
 .modal-box-container{
   border-radius: 5px;
   margin: 10px;
-  width: 50%;
+  width: 35%;
+  min-width: 400px;
   text-align: left;
   box-sizing: border-box;
   box-shadow: 0px 0px 4px 0px #3A5B22;
@@ -304,6 +325,23 @@
   padding: 10px;
 }
 .modal-heading span{
+  text-align: center;
+  padding: 3px;
+  width: 25px;
+  border-radius: 50%;
   border: 1px solid #3A5B22;
 }
+
+.select-category select{
+  padding: 10px;
+  margin-top: 7px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.5);
+  color: #3A5B22;
+  font-size: 0.875rem;
+}
+.select-category option{
+  color: #3A5B22;
+}
+
 
