@@ -13,6 +13,7 @@ const Home = () => {
     const[showAddItem,setShowAddItem]=useState(false);
     const[modalShow,setModalShow]=useState(false);
     const[fetchAgain,setFetchAgain]=useState(false);
+    const[showUpdate,setShowUpdate]=useState(false);
     const[addItemData,setAddItemData]=useState({
       productId: "",
       productName: "",
@@ -26,6 +27,14 @@ const Home = () => {
       soldFlag: false,
       productListingDate: "",
     })
+    // const [editProductData, setEditProductData] = useState({
+    //   productName: '',
+    //   price: '',
+    //   category: "",
+    //   productDescription: '',
+    //   productImg: '',
+    // });
+    const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
     useEffect(()=>{
         const loginKey=localStorage.getItem('loginKey');
         if(!loginKey){
@@ -101,8 +110,22 @@ const Home = () => {
       }
 
       const handleModalShow = () =>{
+        setAddItemData({
+          productId: "",
+          productName: "",
+          productImg: "",
+          productDescription: "",
+          price: null,
+          category: "",
+          rating: 0.0,
+          sellerId: "",
+          buyerId: null,
+          soldFlag: false,
+          productListingDate: "",
+        })
         if(modalShow===true){
           setModalShow(false);
+          setShowUpdate(false);
         }
         else if(modalShow===false){
           setModalShow(true);
@@ -110,14 +133,10 @@ const Home = () => {
       }
 
       const handleAddChange = (inputVal,inputName) =>{
+        console.log("input->",inputVal);
           if(inputName==='item-name'){
             setAddItemData((oldItems)=>{
               return{...oldItems,productName:inputVal}
-            })
-          }
-          else if(inputName==='item-price'){
-            setAddItemData((oldItems)=>{
-              return{...oldItems,price:inputVal}
             })
           }
           else if(inputName==='item-price'){
@@ -148,6 +167,8 @@ const Home = () => {
 
       }
 
+
+
       const handleAddItem = () =>{
           const response= axios.post(`http://localhost:4500/products`,addItemData)
           .then((response)=>{
@@ -157,6 +178,54 @@ const Home = () => {
           .catch((e)=>{
             console.log(e);
           })
+      }
+
+      const deleteProduct = async(productId) =>{
+        try{
+          const response = await axios.delete(`http://localhost:4500/products/${productId}`)
+          console.log('Item deleted successfully:', response.data);
+          setFetchAgain(true);
+        }
+        catch(e){
+          console.log(e);
+        }
+      }
+
+      const handleEditProductClick = (productId) =>{
+        const productToEdit = productItem.find((product)=>product.id===productId);
+        setAddItemData({
+          productName: productToEdit.productName,
+          price: productToEdit.price,
+          category:productToEdit.category,
+          productDescription: productToEdit.productDescription,
+          productImg: productToEdit.productImg,
+        })
+        setCurrentEditingProductId(productId);
+        setModalShow(true);
+        setShowUpdate(true);
+      }
+
+      // const handleEditProduct = async () => {
+      //   try {
+      //     const response = await axios.patch(`http://localhost:4500/products/${currentEditingProductId}`, addItemData);
+      //     console.log('Item updated successfully:', response.data);
+      //     setFetchAgain(true);
+      //     setModalShow(false);
+      //   } catch (e) {
+      //     console.log(e);
+      //   }
+      // };
+
+      const saveProductEdit = async() =>{
+        try{
+          const response = await axios.put(`http://localhost:4500/products/${currentEditingProductId}`, addItemData);
+          console.log('Item updated successfully:', response.data);
+          setModalShow(false);
+          setFetchAgain(true);
+        }
+        catch(e){
+          console.log(e);
+        }
       }
 
   return (
@@ -187,29 +256,30 @@ const Home = () => {
         <div className="product-list-section">
           {filteredProducts.map((item,index)=>{
             return(
-              <ProductCard key={index} item={item}/>
+              <ProductCard key={index} item={item} showAddItem={showAddItem} deleteProduct={deleteProduct} handleEditProductClick={handleEditProductClick}/>
           )
           })}
         </div>
       </div>
-      {modalShow && <div className="modal" tabindex="-1" role="dialog">
+      {modalShow && <div className="modal" tabIndex="-1" role="dialog">
         <div className="modal-box-container" role="document">
             <div className="modal-heading">
-                  <h4>Add Item</h4>
+                  {!showUpdate && <h4>Add Item</h4>}
+                  {showUpdate && <h4>Update Item Details</h4>}
                   <span onClick={()=>handleModalShow()}>x</span>
             </div>
             <div className="modal-body">
               <label htmlFor="item-name">Product Name</label>
               <div>
-                <input type="text" id='item-name' placeholder='Enter product name' onChange={(e)=>handleAddChange(e.target.value,'item-name')}/>
+                <input type="text" value={addItemData.productName} id='item-name' placeholder='Enter product name' onChange={(e)=>handleAddChange(e.target.value,'item-name')}/>
               </div>
               <label htmlFor="item-price">Product Price</label>
               <div>
-                <input type="text" id='item-price' placeholder='Enter product price' onChange={(e)=>handleAddChange(e.target.value,'item-price')}/>
+                <input type="text" value={addItemData.price} id='item-price' placeholder='Enter product price' onChange={(e)=> handleAddChange(e.target.value,'item-price')}/>
               </div>
               <div className='select-category'>
                 <label htmlFor="product-category">Product Category: </label>
-                <select name="product-category" id="product-category" onChange={(e)=>handleAddChange(e.target.value,"product-category")}>
+                <select name="product-category" id="product-category" value={addItemData.category} onChange={(e)=>handleAddChange(e.target.value,"product-category")}>
                   <option value="Electronics">Electronics</option>
                   <option value="Clothes">Clothes</option>
                   <option value="Audio Product">Audio Product</option>
@@ -221,16 +291,18 @@ const Home = () => {
               </div>
               <label htmlFor="item-desc">Product Description</label>
               <div>
-                <textarea name='item-desc' id='item-desc' placeholder='Enter product description...' onChange={(e)=>handleAddChange(e.target.value,'item-desc')}/>
+                <textarea name='item-desc' id='item-desc' value={addItemData.productDescription} placeholder='Enter product description...' onChange={(e)=> handleAddChange(e.target.value,'item-desc')}/>
               </div>
               <label htmlFor="item-img">Product Image</label>
               <div>
-                <input type="text" id='item-img' placeholder='Enter product image-url' onChange={(e)=>handleAddChange(e.target.value,'item-img')}/>
+                <input type="text" id='item-img' value={addItemData.productImg} placeholder='Enter product image-url' onChange={(e)=>handleAddChange(e.target.value,'item-img')}/>
               </div>
               <div className="add-item-form-btn">
-                <button className='add-btn-save' onClick={()=>handleAddItem()}>Add</button>
-                <button className='add-btn-cancel'>Cancel</button>
+              {!showUpdate && <button className='add-btn-save' onClick={()=>handleAddItem()}>Add</button>}
+              {showUpdate &&<button className='add-btn-save' onClick={()=>saveProductEdit()}>Save Changes</button>} 
+              <button className='add-btn-cancel'>Cancel</button>              
               </div>
+              
             </div>
           </div>
       </div>}
