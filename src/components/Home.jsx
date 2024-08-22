@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 import axios from 'axios';
+import FilterSection from './FilterSection';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -27,14 +28,8 @@ const Home = () => {
       soldFlag: false,
       productListingDate: "",
     })
-    // const [editProductData, setEditProductData] = useState({
-    //   productName: '',
-    //   price: '',
-    //   category: "",
-    //   productDescription: '',
-    //   productImg: '',
-    // });
-    const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
+  const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
+  
     useEffect(()=>{
         const loginKey=localStorage.getItem('loginKey');
         if(!loginKey){
@@ -205,17 +200,6 @@ const Home = () => {
         setShowUpdate(true);
       }
 
-      // const handleEditProduct = async () => {
-      //   try {
-      //     const response = await axios.patch(`http://localhost:4500/products/${currentEditingProductId}`, addItemData);
-      //     console.log('Item updated successfully:', response.data);
-      //     setFetchAgain(true);
-      //     setModalShow(false);
-      //   } catch (e) {
-      //     console.log(e);
-      //   }
-      // };
-
       const saveProductEdit = async() =>{
         try{
           const response = await axios.put(`http://localhost:4500/products/${currentEditingProductId}`, addItemData);
@@ -252,7 +236,7 @@ const Home = () => {
 
       </div>
       <div className="dasboard-container">
-        <div className="filter-section">filter section</div>
+        <FilterSection filteredProducts={filteredProducts} setFilteredProducts={setFilteredProducts}/>
         <div className="product-list-section">
           {filteredProducts.map((item,index)=>{
             return(
