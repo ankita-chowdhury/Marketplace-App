@@ -29,24 +29,45 @@ const Home = () => {
       productListingDate: "",
     })
   const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
+  const[filterSectionItems,setFilterSectionItems]=useState([
+    {name:"Electronics",check:false},
+    {name:"Clothes",check:false},
+    {name:"Audio Product",check:false},
+    {name:"Gaming Product",check:false},
+    {name:"Home Decor & Lights",check:false},
+    {name:"Household Appliances",check:false},
+    {name:"Smartphone",check:false},
+    {name:"Fitness Equipment",check:false},
+    {name:"Footwear",check:false}
+]);
   
     useEffect(()=>{
         const loginKey=localStorage.getItem('loginKey');
         if(!loginKey){
           navigate('/login');
-        }
-        
+        }        
         productApiCall();
         const parsedUser = JSON.parse(loginKey);
         getUserDetails(parsedUser);
         filterItems("productList","");
-      },[fetchAgain])
-
+      },[])
+    
+      useEffect(()=>{
+      applyFilters();
+    },[filterSectionItems])
+    
+    const applyFilters = () => {
+      const activeFilters = filterSectionItems
+        .filter((item) => item.check)
+        .map((item) => item.name);
+  
+      filterItems("productList", activeFilters);
+    };
       const productApiCall = async() =>{
         try{
           const response = await axios.get(`http://localhost:4500/products`);
           setProductItem(response.data);
-          setFetchAgain(false);
+          // setFetchAgain(false);
         }
         catch(e){
           console.log(e);
@@ -64,19 +85,30 @@ const Home = () => {
         }
       }
 
-      const filterItems = (inputName,cateGory) =>{
-        if(inputName==="myitems"){
-            console.log("check",userDetails.id);
-            const tempProducts=productItem.filter((item)=>item.sellerId===userDetails.id);
-            setFilteredProducts(tempProducts);
-            setShowAddItem(true);
-          }
-          else if(inputName==="productList"){
-            const tempProducts=productItem.filter((item)=>item.sellerId!==userDetails.id);
-            setFilteredProducts(tempProducts);
-            setShowAddItem(false);
-          }
-      }
+      const filterItems = (inputName, activeFilters) => {
+        let tempProducts = productItem;
+        console.log("activeFilters",activeFilters);
+        // Apply category filtering
+        if (activeFilters.length > 0) {
+          tempProducts = tempProducts.filter((item) =>
+            activeFilters.includes(item.category)
+          );
+        }
+        console.log("temp products",tempProducts);
+        if (inputName === "myitems") {
+          tempProducts = tempProducts.filter(
+            (item) => item.sellerId === userDetails.id
+          );
+          setShowAddItem(true);
+        } else if (inputName === "productList") {
+          tempProducts = tempProducts.filter(
+            (item) => item.sellerId !== userDetails.id
+          );
+          setShowAddItem(false);
+        }
+    
+        setFilteredProducts(tempProducts);
+      };
 
       const handleFilter = (inputName,cateGory) =>{
         filterItems(inputName,cateGory);
@@ -168,7 +200,7 @@ const Home = () => {
           const response= axios.post(`http://localhost:4500/products`,addItemData)
           .then((response)=>{
               setModalShow(false);
-              setFetchAgain(true);
+              // setFetchAgain(true);
           })
           .catch((e)=>{
             console.log(e);
@@ -179,7 +211,7 @@ const Home = () => {
         try{
           const response = await axios.delete(`http://localhost:4500/products/${productId}`)
           console.log('Item deleted successfully:', response.data);
-          setFetchAgain(true);
+          // setFetchAgain(true);
         }
         catch(e){
           console.log(e);
@@ -205,7 +237,7 @@ const Home = () => {
           const response = await axios.put(`http://localhost:4500/products/${currentEditingProductId}`, addItemData);
           console.log('Item updated successfully:', response.data);
           setModalShow(false);
-          setFetchAgain(true);
+          // setFetchAgain(true);
         }
         catch(e){
           console.log(e);
@@ -236,7 +268,7 @@ const Home = () => {
 
       </div>
       <div className="dasboard-container">
-        <FilterSection filteredProducts={filteredProducts} setFilteredProducts={setFilteredProducts}/>
+        <FilterSection filterSectionItems={filterSectionItems} setFilterSectionItems={setFilterSectionItems}/>
         <div className="product-list-section">
           {filteredProducts.map((item,index)=>{
             return(
@@ -271,6 +303,8 @@ const Home = () => {
                   <option value="Household Appliances">Household Appliances</option>
                   <option value="Home Decor & Lights">Home Decor & Lights</option>
                   <option value="Smartphone">Smartphone</option>
+                  <option value="Fitness Equipment">Fitness Equipment</option>
+                  <option value="Footwear">Footwear</option>
                 </select>
               </div>
               <label htmlFor="item-desc">Product Description</label>
