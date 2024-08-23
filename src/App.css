@@ -28,7 +28,7 @@
   padding: 10px;
   color: black;
 }
-.input-div input,.modal-body input, .modal-body textarea{
+.input-div input,.modal-body input, .modal-body textarea, .inner-profile-right-div input{
   width: calc(100% - 20px);
   padding: 10px;
   margin-top: 7px;
@@ -263,14 +263,14 @@
   border-radius: 25px;
   width: 45%;
 }
-.add-to-cart,.add-btn-save{
+.add-to-cart,.add-btn-save, .save-profile{
   background-color: #3A5B22;
   color: #fff;
 }
 .add-to-cart:hover{
-  background-color: #fff;
-  color: #3A5B22;
-  border: 1px dashed #3A5B22;
+  background-color: #45873e85;
+  color: #fff;
+  border: 1px dashed transparent;
 }
 .add-btn-save:hover{
   background-color: #fff;
@@ -283,7 +283,7 @@
   border: 1px dashed #3A5B22;
 }
 .view-details:hover{
-  background-color: #3A5B22;
+  background-color: #45873e85;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -444,6 +444,71 @@
   color: #fff;
   border: none;
 }
-
+.outer-profile-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px;
+  color: #3A5B22;
+}
+.inner-profile-left-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding: 30px;
+  width: 20%;
+  min-width: 360px;
+  box-shadow: 0px 0px 4px 0px #3A5B22;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.inner-profile-right-div{
+  text-align: left;
+  padding: 30px;
+  width: 35%;
+  min-width: 360px;
+  box-shadow: 0px 0px 4px 0px #3A5B22;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.dob-div{
+  margin-bottom: 20px;
+}
+.dropdown-img{
+  margin: 0px 5px;
+}
+.dropdown-img img{
+  height: 14px;
+  margin-top: 10px;
+}
+.dropdown-hide{
+  transform: rotate(180deg);
+  transition: 0.2s linear;
+}
+.dropdown-show{
+  transform: rotate(0deg);
+  transition: 0.2s linear;
+}
+.address-section{
+  display: flex;
+  align-items: center;
+}
+.address-div{
+  padding: 10px;
+  margin-bottom: 15px;
+}
+.heading-profile{
+  display: flex;
+  justify-content: space-between;
+}
+.heading-profile img{
+  height: 20px;
+}
+.save-profile-div{
+  margin-top: 15px;
+  text-align: center;
+}
 
 
