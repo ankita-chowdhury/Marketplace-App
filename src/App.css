@@ -138,7 +138,7 @@
   padding: 15px;
 }
 .filter-section{
-  height: 500px;
+  height: 520px;
   width: 20%;
   padding: 20px;
   display: flex;
@@ -155,8 +155,20 @@
   display: flex;
   align-items: center;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 7px;
   color: #3A5B22;
+}
+.filter-heading{
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #6d796443;
+}
+.filter-heading span{
+  display: flex;
+  align-items: center;
+  color: #3A5B22;
+  font-weight: 500;
+  font-size: 17px;
 }
 .custom-checkbox {
   appearance: none;
@@ -185,11 +197,20 @@
 }
 .filter-item label {
   cursor: pointer;
-  font-size: 17px;
+  font-size: 16px;
   color: #333;
 }
 .filter-item label:hover{
   color: #8ec467;
+}
+.filter-img img{
+  height: 18px;
+  width: 18px;
+  margin-right: 5px;
+}
+.filter-text{
+  font-size: 16px;
+  font-weight: 500;
 }
 .dasboard-container{
   display: flex;
@@ -246,6 +267,11 @@
   background-color: #3A5B22;
   color: #fff;
 }
+.add-to-cart:hover{
+  background-color: #fff;
+  color: #3A5B22;
+  border: 1px dashed #3A5B22;
+}
 .add-btn-save:hover{
   background-color: #fff;
   color: #3A5B22;
@@ -255,6 +281,11 @@
   background-color: #fff;
   color: #3A5B22;
   border: 1px dashed #3A5B22;
+}
+.view-details:hover{
+  background-color: #3A5B22;
+  color: #fff;
+  border: 1px solid transparent;
 }
 .add-btn-cancel:hover{
   background-color: #3A5B22;
