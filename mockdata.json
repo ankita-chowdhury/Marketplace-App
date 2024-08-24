@@ -254,6 +254,26 @@
       "buyerId": null,
       "soldFlag": false,
       "productListingDate": "22-08-2024"
+    },
+    {
+      "productName": "Night Lamp ",
+      "price": "7291.99",
+      "category": "Home Decor & Lights",
+      "productDescription": "Night Owl (Gold, Black) Marble Study Table Lamp",
+      "productImg": "https://ii1.pepperfry.com/media/catalog/product/b/e/494x544/beige-cotton-table-lamp-by-foziq-beige-cotton-table-lamp-by-foziq-icdan1.jpg",
+      "sellerId": "249d",
+      "productListingDate": "24-08-2024",
+      "id": "ae29"
+    },
+    {
+      "productName": "Plant ",
+      "price": "799.99",
+      "category": "Home Decor & Lights",
+      "productDescription": "Artificial Cute Plants Mini Potted Plant Small Greenery Decor for Indoor Home",
+      "productImg": "https://rukminim2.flixcart.com/image/850/1000/xif0q/artificial-plant/y/k/k/37-yes-pj-2748-a-prajna-original-imahfpsygvez3gzh.jpeg?q=20&crop=false",
+      "sellerId": "249d",
+      "productListingDate": "24-08-2024",
+      "id": "e21b"
     }
   ],
   "transactionHistory": [
