@@ -5,6 +5,9 @@
   justify-content: center;
   text-align: center;
 }
+input{
+  color: #3A5B22;
+}
 .outer-container{
   display: flex;
 }

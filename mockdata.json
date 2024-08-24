@@ -5,15 +5,15 @@
       "username": "ankita",
       "email": "ac07041999@gmail.com",
       "password": "ankita@123",
-      "dateOfBirth": "",
+      "dateOfBirth": "1999-04-07",
       "address": {
-        "adressLine1":"",
-        "city":"",
-        "state":"",
-        "country":"",
-        "zipCode":""
+        "adressLine1": "Sonamukhi, Bankura, West Bengal",
+        "city": "Sonamukhi",
+        "state": "West Bengal",
+        "country": "India",
+        "zipCode": "722207"
       },
-      "contactNo": ""
+      "contactNo": "8637326281"
     },
     {
       "id": "fce4",
@@ -22,11 +22,11 @@
       "password": "12345",
       "dateOfBirth": "",
       "address": {
-        "adressLine1":"",
-        "city":"",
-        "state":"",
-        "country":"",
-        "zipCode":""
+        "adressLine1": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "zipCode": ""
       },
       "contactNo": ""
     },
@@ -35,15 +35,15 @@
       "username": "try123",
       "email": "try123@gmail.com",
       "password": "try123",
-      "dateOfBirth": "",
+      "dateOfBirth": "2015-02-14",
       "address": {
-        "adressLine1":"",
-        "city":"",
-        "state":"",
-        "country":"",
-        "zipCode":""
+        "adressLine1": "Kolkata, West Bengal, 722207",
+        "city": "Kolkata",
+        "state": "West Bengal",
+        "country": "India",
+        "zipCode": "722207"
       },
-      "contactNo": ""
+      "contactNo": "900000000"
     },
     {
       "id": "8e65",
@@ -52,11 +52,11 @@
       "password": "abcd",
       "dateOfBirth": "",
       "address": {
-        "adressLine1":"",
-        "city":"",
-        "state":"",
-        "country":"",
-        "zipCode":""
+        "adressLine1": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "zipCode": ""
       },
       "contactNo": ""
     },
