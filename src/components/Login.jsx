@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios";
+import BASE_URL from "./ApiServices";
 
 
 const Login = () => {
@@ -35,7 +36,7 @@ const Login = () => {
 const checkLogin = async() =>{
  if(loginData.userName!=="" && loginData.password!=""){
   try{
-    const response = await axios.get(`http://localhost:4500/users?email=${loginData.email}`);
+    const response = await axios.get(`${BASE_URL}/users?email=${loginData.email}`);
     const user=response.data[0];
     if(user.password===loginData.password){
       

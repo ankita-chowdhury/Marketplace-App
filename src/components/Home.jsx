@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import ProductCard from './ProductCard';
 import axios from 'axios';
 import FilterSection from './FilterSection';
+import BASE_URL from './ApiServices';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -65,7 +66,7 @@ const Home = () => {
     };
       const productApiCall = async() =>{
         try{
-          const response = await axios.get(`http://localhost:4500/products`);
+          const response = await axios.get(`${BASE_URL}/products`);
           setProductItem(response.data);
           // setFetchAgain(false);
         }
@@ -77,7 +78,7 @@ const Home = () => {
 
       const getUserDetails = async(localData) =>{
         try{
-          const response = await axios.get(`http://localhost:4500/users?email=${localData.email}`)
+          const response = await axios.get(`${BASE_URL}/users?email=${localData.email}`)
           setUserDetails(response.data[0]);
         }
         catch(e){
@@ -197,7 +198,7 @@ const Home = () => {
 
 
       const handleAddItem = () =>{
-          const response= axios.post(`http://localhost:4500/products`,addItemData)
+          const response= axios.post(`${BASE_URL}/products`,addItemData)
           .then((response)=>{
               setModalShow(false);
               // setFetchAgain(true);
@@ -209,7 +210,7 @@ const Home = () => {
 
       const deleteProduct = async(productId) =>{
         try{
-          const response = await axios.delete(`http://localhost:4500/products/${productId}`)
+          const response = await axios.delete(`${BASE_URL}/products/${productId}`)
           console.log('Item deleted successfully:', response.data);
           // setFetchAgain(true);
         }
@@ -234,7 +235,7 @@ const Home = () => {
 
       const saveProductEdit = async() =>{
         try{
-          const response = await axios.put(`http://localhost:4500/products/${currentEditingProductId}`, addItemData);
+          const response = await axios.put(`${BASE_URL}/products/${currentEditingProductId}`, addItemData);
           console.log('Item updated successfully:', response.data);
           setModalShow(false);
           // setFetchAgain(true);

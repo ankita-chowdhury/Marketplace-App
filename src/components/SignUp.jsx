@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios';
+import BASE_URL from './ApiServices';
 
 const SignUp = () => {
     const navigate = useNavigate();
@@ -11,7 +12,13 @@ const SignUp = () => {
         email: "",
         password: "",
         dateOfBirth: "",
-        address: "",
+       address: {
+        adressLine1:"",
+        city:"",
+        state:"",
+        country:"",
+        zipCode:""
+      },
         contactNo: ""
     })
 
@@ -36,9 +43,9 @@ const SignUp = () => {
     const handleSignUp = async() =>{
         if(user.username!=="" && user.email!=="" && user.password!==""){
             try{
-                const tempUserData=await axios.get(`http://localhost:4500/users?email=${user.email}`);
+                const tempUserData=await axios.get(`${BASE_URL}/users?email=${user.email}`);
                 if(tempUserData.data.length===0){
-                    const response=await axios.post(`http://localhost:4500/users`,user);
+                    const response=await axios.post(`${BASE_URL}/users`,user);
                 console.log("response",response);
                 const localData={user:user.username,email:user.email};
                 localStorage.setItem('loginKey',JSON.stringify(localData));
