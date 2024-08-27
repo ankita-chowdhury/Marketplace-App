@@ -67,7 +67,12 @@ const Home = () => {
       const productApiCall = async() =>{
         try{
           const response = await axios.get(`${BASE_URL}/products`);
-          setProductItem(response.data);
+          setProductItem((prevProducts) => {
+            // Logic to merge or update existing state without resetting everything
+            const updatedProducts = response.data;
+            return updatedProducts; // You can choose how you want to merge them
+          });
+          // applyFilters();
           // setFetchAgain(false);
         }
         catch(e){
@@ -202,6 +207,7 @@ const Home = () => {
           .then((response)=>{
               setModalShow(false);
               // setFetchAgain(true);
+              productApiCall();
           })
           .catch((e)=>{
             console.log(e);
@@ -213,6 +219,7 @@ const Home = () => {
           const response = await axios.delete(`${BASE_URL}/products/${productId}`)
           console.log('Item deleted successfully:', response.data);
           // setFetchAgain(true);
+          productApiCall();
         }
         catch(e){
           console.log(e);
@@ -239,6 +246,7 @@ const Home = () => {
           console.log('Item updated successfully:', response.data);
           setModalShow(false);
           // setFetchAgain(true);
+          productApiCall();
         }
         catch(e){
           console.log(e);

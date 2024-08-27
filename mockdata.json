@@ -199,23 +199,23 @@
     },
     {
       "productName": "Flower Vase",
-      "price": "1500",
+      "price": "2500",
       "category": "Home Decor & Lights",
       "productDescription": "Japanese flower vase ",
       "productImg": "https://m.media-amazon.com/images/I/619vvcyPS4L.jpg",
       "sellerId": "e9f4",
-      "productListingDate": "21-08-2024",
+      "productListingDate": "27-08-2024",
       "id": "4967"
     },
     {
-      "id": "a32d",
-      "productName": "Night Lamp",
+      "productName": "Night Lamp 2",
       "price": "2999.99",
       "category": "Home Decor & Lights",
       "productDescription": "Bedside Side Table Lamp with Wooden Base for Night Reading",
       "productImg": "https://m.media-amazon.com/images/I/81nij8Qz2vL._AC_UF894,1000_QL80_.jpg",
       "sellerId": "e9f4",
-      "productListingDate": "21-08-2024"
+      "productListingDate": "27-08-2024",
+      "id": "a32d"
     },
     {
       "productName": "Lehenga",
@@ -274,6 +274,30 @@
       "sellerId": "249d",
       "productListingDate": "24-08-2024",
       "id": "e21b"
+    },
+    {
+      "productName": "Heels",
+      "price": "2599.99",
+      "category": "Footwear",
+      "productDescription": "Strappy White Block Heeled Sandals for Women & Girls",
+      "productImg": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRB-4aHplPBm_eoMH-wggplubYdYHMxafyuiJeeqo4n48gDcgMjD3ZkfwFUjdkMMSkD2yebC0PS5Y6X96YWZmaMfoS8H4wlGdRWDZTCUCAakEtGAoNRY7h90s8CIq_V3dKMP7pNtHM&usqp=CAc",
+      "sellerId": "249d",
+      "productListingDate": "24-08-2024",
+      "id": "990e"
+    },
+    {
+      "id": "4a83",
+      "productId": "",
+      "productName": "Refrigerator",
+      "productImg": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSlXzQ7T0zVvzoSQ8ULz1Rk7PbcApXscAud5f9qwdw449siSkTz5i-XcBhWIY8kzwHyqHyakx3y40s9SIx1wpVhee7KRoFaxsmQ0loXZqbCo8-XMLrYCHEwPL1kN6mcMAbE1D4XXQU&usqp=CAc",
+      "productDescription": "615 L Convertible 5in1 Side by Side Refrigerator",
+      "price": "196100.99",
+      "category": "Household Appliances",
+      "rating": 0,
+      "sellerId": "e9f4",
+      "buyerId": null,
+      "soldFlag": false,
+      "productListingDate": "27-08-2024"
     }
   ],
   "transactionHistory": [
@@ -283,6 +307,7 @@
       "productName": "Smartphone",
       "price": 140999.99,
       "category": "Electronics",
+      "productImg": "https://m.media-amazon.com/images/I/71v2jVh6nIL._SX679_.jpg",
       "sellerId": "U001",
       "buyerId": "U002",
       "productListingDate": "2024-07-01",
@@ -295,6 +320,7 @@
       "productName": "Laptop",
       "price": 150999.99,
       "category": "Computers",
+      "productImg": "https://m.media-amazon.com/images/I/51hJIsWMagL._AC_UF1000,1000_QL80_.jpg",
       "sellerId": "U003",
       "buyerId": "U001",
       "productListingDate": "2024-08-01",
@@ -307,6 +333,7 @@
       "productName": "Headphones",
       "price": 25000.99,
       "category": "Audio",
+      "productImg": "https://m.media-amazon.com/images/I/312Gw7w4CVL._SX300_SY300_QL70_FMwebp_.jpg",
       "sellerId": "U002",
       "buyerId": "U003",
       "productListingDate": "2024-07-20",
@@ -319,6 +346,7 @@
       "productName": "Smartwatch",
       "price": 41900.99,
       "category": "Wearables",
+      "productImg": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MT2Y3ref_VW_34FR+watch-case-41-aluminum-pink-nc-s9_VW_34FR+watch-face-41-aluminum-pink-s9_VW_34FR_WF_CO_GEO_IN?wid=5120&hei=3280&bgc=fafafa&trim=1&fmt=p-jpg&qlt=80&.v=Z0VkY0NhREJ6WjFzb3N5VEYrKzFoQjJXVW9BNEhuTURaNVlmRjZxRXZQeXlESTJEU21VQ3kwMTlnSk9SWXc3T1lmQTM3dWwxOEVOeWkrSnZJS3hUWHNZUk12MUVIVHRxUC9tRlNJeUZ4LzNvRFBDZ2ppL3VKbG5SaHlPeG9SOGNWRGRkNWd6OXhEb2lBTXYxZnpxbGdLMCtHMVlHSGttWG40UU14R241ekFhYmZuSTdFUnErS0g3SWYxazQrNDdyRzE3K0tORmZaUy9vOVdqTEp2dmJNMGdNL3BvRkdKVDVQdS91YnVnbnJuZ3JPZ0xXb3dPVUV6bytXY1hzR2F1cg==",
       "sellerId": "U003",
       "buyerId": null,
       "productListingDate": "2024-08-05",
@@ -331,6 +359,7 @@
       "productName": "Gaming Console",
       "price": 37499.99,
       "category": "Gaming",
+      "productImg": "https://s.yimg.com/uu/api/res/1.2/LBRgeGZAwDPBCBk3gvRlvw--~B/Zmk9c3RyaW07aD03MjA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2023-05/5a95e9e0-edae-11ed-9efe-f952d9118102",
       "sellerId": "S002",
       "buyerId": "B001",
       "productListingDate": "2024-07-25",
@@ -343,59 +372,12 @@
       "productName": "Bluetooth Speaker",
       "price": 3999.99,
       "category": "Audio",
+      "productImg": "https://www.reliancedigital.in/medias/JBL-GO-Essential-Bluetooth-Speaker-493711858-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w3MzkyMXxpbWFnZS9qcGVnfGltYWdlcy9oYzgvaDU2Lzk5OTMwNzA0NzczNDIuanBnfDk2ZTM3ZTBjOTc2ZjI2ZDRlYmU1MjhlZDgwMTM3NDliMjQ2ZWRjMDIzZDc1ZmM5MWQxM2YwMTU2M2NjNTQ5ZTY",
       "sellerId": "S003",
       "buyerId": null,
       "productListingDate": "2024-07-28",
       "productPurchaseDate": null,
       "id": "1c10"
-    },
-    {
-      "transactionId": "T007",
-      "productId": "P007",
-      "productName": "4K TV",
-      "price": 74990.99,
-      "category": "Home Entertainment",
-      "sellerId": "S001",
-      "buyerId": "B002",
-      "productListingDate": "2024-08-01",
-      "productPurchaseDate": "2024-08-03",
-      "id": "9ec3"
-    },
-    {
-      "transactionId": "T008",
-      "productId": "P008",
-      "productName": "Tablet",
-      "price": 32790.99,
-      "category": "Computers",
-      "sellerId": "S002",
-      "buyerId": null,
-      "productListingDate": "2024-08-05",
-      "productPurchaseDate": null,
-      "id": "db4e"
-    },
-    {
-      "transactionId": "T009",
-      "productId": "P009",
-      "productName": "Digital Camera",
-      "price": 472610.99,
-      "category": "Photography",
-      "sellerId": "S003",
-      "buyerId": "B003",
-      "productListingDate": "2024-08-08",
-      "productPurchaseDate": "2024-08-12",
-      "id": "8cb3"
-    },
-    {
-      "transactionId": "T010",
-      "productId": "P010",
-      "productName": "Smart Home Assistant",
-      "price": 5049.99,
-      "category": "Smart Home",
-      "sellerId": "S001",
-      "buyerId": null,
-      "productListingDate": "2024-08-10",
-      "productPurchaseDate": null,
-      "id": "f339"
     }
   ]
 }
