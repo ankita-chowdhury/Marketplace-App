@@ -67,12 +67,7 @@ const Home = () => {
       const productApiCall = async() =>{
         try{
           const response = await axios.get(`${BASE_URL}/products`);
-          setProductItem((prevProducts) => {
-            // Logic to merge or update existing state without resetting everything
-            const updatedProducts = response.data;
-            return updatedProducts; // You can choose how you want to merge them
-          });
-          // applyFilters();
+          setProductItem(response.data);
           // setFetchAgain(false);
         }
         catch(e){
