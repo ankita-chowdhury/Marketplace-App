@@ -3,12 +3,11 @@ import axios from 'axios'
 import BASE_URL from './ApiServices';
 import ProductCard from './ProductCard';
 
-const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemData}) => {
+const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemData,setCurrentEditingProductId,fetchMyProducts,setFetchMyProducts}) => {
     const [myProducts,setMyProducts]=useState([]);
-    // const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
     useEffect(()=>{
         getMyProductList();
-    },[])
+    },[fetchMyProducts])
     const getMyProductList = async() =>{
         try{
             const response = await axios.get(`${BASE_URL}/products`,
@@ -17,6 +16,7 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
             }
             );
             setMyProducts(response.data);
+            setFetchMyProducts(false);
             // setFetchAgain(false);
           }
           catch(e){
@@ -27,7 +27,6 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
 
     const handleEditProductClick = (productId) =>{
       const productToEdit = myProducts.find((product)=>product.id===productId);
-      console.log("productId",productToEdit);
       setAddItemData({
         productName: productToEdit.productName,
         price: productToEdit.price,
@@ -35,7 +34,7 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
         productDescription: productToEdit.productDescription,
         productImg: productToEdit.productImg,
       })
-      // setCurrentEditingProductId(productId);
+      setCurrentEditingProductId(productId);
       setModalShow(true);
       setShowUpdate(true);
     }

@@ -18,6 +18,7 @@ const Home = () => {
     const[modalShow,setModalShow]=useState(false);
     const[fetchAgain,setFetchAgain]=useState(false);
     const[showUpdate,setShowUpdate]=useState(false);
+    const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
     const[addItemData,setAddItemData]=useState({
       productId: "",
       productName: "",
@@ -42,6 +43,8 @@ const Home = () => {
     {name:"Fitness Equipment",check:false},
     {name:"Footwear",check:false}
 ]);
+
+const[fetchMyProducts,setFetchMyProducts]=useState(false);
   
     useEffect(()=>{
         const loginKey=localStorage.getItem('loginKey');
@@ -229,6 +232,8 @@ const Home = () => {
           setModalShow(false);
           // setFetchAgain(true);
           productApiCall();
+          setFetchMyProducts(true);
+          
         }
         catch(e){
           console.log(e);
@@ -261,7 +266,7 @@ const Home = () => {
       <div className="dasboard-container">
         <FilterSection filterSectionItems={filterSectionItems} setFilterSectionItems={setFilterSectionItems}/>
         <div className="product-list-section">
-          {showAddItem?<MyProducts userId={userDetails?.id} setModalShow={setModalShow} setShowUpdate={setShowUpdate} showAddItem={showAddItem} setAddItemData={setAddItemData}/>:<ProductList userId={userDetails?.id}/>}
+          {showAddItem?<MyProducts userId={userDetails?.id} setModalShow={setModalShow} setShowUpdate={setShowUpdate} showAddItem={showAddItem} setAddItemData={setAddItemData} setCurrentEditingProductId={setCurrentEditingProductId} fetchMyProducts={fetchMyProducts} setFetchMyProducts={setFetchMyProducts}/>:<ProductList userId={userDetails?.id}/>}
         </div>
       </div>
       {modalShow && <div className="modal" tabIndex="-1" role="dialog">

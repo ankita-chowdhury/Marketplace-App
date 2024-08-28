@@ -199,47 +199,43 @@
     },
     {
       "productName": "Flower Vase",
-      "price": "2500",
+      "price": "1000",
       "category": "Home Decor & Lights",
       "productDescription": "Japanese flower vase ",
       "productImg": "https://m.media-amazon.com/images/I/619vvcyPS4L.jpg",
       "sellerId": "e9f4",
-      "productListingDate": "27-08-2024",
+      "productListingDate": "29-08-2024",
       "id": "4967"
     },
     {
       "productName": "Night Lamp 2",
-      "price": "2999.99",
+      "price": "2599.99",
       "category": "Home Decor & Lights",
       "productDescription": "Bedside Side Table Lamp with Wooden Base for Night Reading",
       "productImg": "https://m.media-amazon.com/images/I/81nij8Qz2vL._AC_UF894,1000_QL80_.jpg",
       "sellerId": "e9f4",
-      "productListingDate": "27-08-2024",
+      "productListingDate": "29-08-2024",
       "id": "a32d"
     },
     {
       "productName": "Lehenga",
-      "price": "6199.99",
+      "price": "6799.99",
       "category": "Clothes",
       "productDescription": "Sabyasachi Designer Lehenga Choli",
       "productImg": "https://www.wedabout.com/blog/wp-content/uploads/2023/11/engagement-lehenga-for-bride-with-cape-dupatta.jpg",
       "sellerId": "e9f4",
-      "productListingDate": "21-08-2024",
+      "productListingDate": "29-08-2024",
       "id": "2e15"
     },
     {
-      "id": "1363",
-      "productId": "",
       "productName": "Cardio Fitness Equipment",
-      "productImg": "https://images.jdmagicbox.com/rep/b2b/cardio-fitness-equipment/cardio-fitness-equipment-1.jpg",
-      "productDescription": "Electrical Cardio Fitness Equipment",
-      "price": "28999.99",
+      "price": "27999.99",
       "category": "Fitness Equipment",
-      "rating": 0,
+      "productDescription": "Electrical Cardio Fitness Equipment",
+      "productImg": "https://images.jdmagicbox.com/rep/b2b/cardio-fitness-equipment/cardio-fitness-equipment-1.jpg",
       "sellerId": "e9f4",
-      "buyerId": null,
-      "soldFlag": false,
-      "productListingDate": "22-08-2024"
+      "productListingDate": "29-08-2024",
+      "id": "1363"
     },
     {
       "id": "a4b1",
