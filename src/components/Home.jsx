@@ -51,7 +51,6 @@ const[fetchMyProducts,setFetchMyProducts]=useState(false);
         if(!loginKey){
           navigate('/login');
         }        
-        productApiCall();
         const parsedUser = JSON.parse(loginKey);
         getUserDetails(parsedUser);
         filterItems("productList","");
@@ -68,17 +67,6 @@ const[fetchMyProducts,setFetchMyProducts]=useState(false);
   
       filterItems("productList", activeFilters);
     };
-      const productApiCall = async() =>{
-        try{
-          const response = await axios.get(`${BASE_URL}/products`);
-          setProductItem(response.data);
-          // setFetchAgain(false);
-        }
-        catch(e){
-          console.log(e);
-          
-        }
-      }
 
       const getUserDetails = async(localData) =>{
         try{
@@ -203,8 +191,8 @@ const[fetchMyProducts,setFetchMyProducts]=useState(false);
           const response= axios.post(`${BASE_URL}/products`,addItemData)
           .then((response)=>{
               setModalShow(false);
+              setFetchMyProducts(true);
               // setFetchAgain(true);
-              productApiCall();
           })
           .catch((e)=>{
             console.log(e);
@@ -219,7 +207,6 @@ const[fetchMyProducts,setFetchMyProducts]=useState(false);
           console.log('Item updated successfully:', response.data);
           setModalShow(false);
           // setFetchAgain(true);
-          productApiCall();
           setFetchMyProducts(true);
           
         }
