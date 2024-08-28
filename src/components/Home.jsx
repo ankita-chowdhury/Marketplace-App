@@ -6,6 +6,8 @@ import ProductCard from './ProductCard';
 import axios from 'axios';
 import FilterSection from './FilterSection';
 import BASE_URL from './ApiServices';
+import MyProducts from './MyProducts';
+import ProductList from './ProductList';
 
 const Home = () => {
     const navigate = useNavigate();
@@ -195,8 +197,6 @@ const Home = () => {
 
       }
 
-
-
       const handleAddItem = () =>{
           const response= axios.post(`${BASE_URL}/products`,addItemData)
           .then((response)=>{
@@ -274,11 +274,7 @@ const Home = () => {
       <div className="dasboard-container">
         <FilterSection filterSectionItems={filterSectionItems} setFilterSectionItems={setFilterSectionItems}/>
         <div className="product-list-section">
-          {filteredProducts.map((item,index)=>{
-            return(
-              <ProductCard key={index} item={item} showAddItem={showAddItem} deleteProduct={deleteProduct} handleEditProductClick={handleEditProductClick}/>
-          )
-          })}
+          {showAddItem?<MyProducts userId={userDetails?.id}/>:<ProductList userId={userDetails?.id}/>}
         </div>
       </div>
       {modalShow && <div className="modal" tabIndex="-1" role="dialog">
