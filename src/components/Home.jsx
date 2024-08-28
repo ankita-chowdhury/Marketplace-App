@@ -31,7 +31,6 @@ const Home = () => {
       soldFlag: false,
       productListingDate: "",
     })
-  const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
   const[filterSectionItems,setFilterSectionItems]=useState([
     {name:"Electronics",check:false},
     {name:"Clothes",check:false},
@@ -221,19 +220,7 @@ const Home = () => {
         }
       }
 
-      const handleEditProductClick = (productId) =>{
-        const productToEdit = productItem.find((product)=>product.id===productId);
-        setAddItemData({
-          productName: productToEdit.productName,
-          price: productToEdit.price,
-          category:productToEdit.category,
-          productDescription: productToEdit.productDescription,
-          productImg: productToEdit.productImg,
-        })
-        setCurrentEditingProductId(productId);
-        setModalShow(true);
-        setShowUpdate(true);
-      }
+      
 
       const saveProductEdit = async() =>{
         try{
@@ -274,7 +261,7 @@ const Home = () => {
       <div className="dasboard-container">
         <FilterSection filterSectionItems={filterSectionItems} setFilterSectionItems={setFilterSectionItems}/>
         <div className="product-list-section">
-          {showAddItem?<MyProducts userId={userDetails?.id}/>:<ProductList userId={userDetails?.id}/>}
+          {showAddItem?<MyProducts userId={userDetails?.id} setModalShow={setModalShow} setShowUpdate={setShowUpdate} showAddItem={showAddItem} setAddItemData={setAddItemData}/>:<ProductList userId={userDetails?.id}/>}
         </div>
       </div>
       {modalShow && <div className="modal" tabIndex="-1" role="dialog">

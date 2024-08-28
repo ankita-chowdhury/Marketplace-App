@@ -3,8 +3,9 @@ import axios from 'axios'
 import BASE_URL from './ApiServices';
 import ProductCard from './ProductCard';
 
-const MyProducts = ({userId}) => {
+const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemData}) => {
     const [myProducts,setMyProducts]=useState([]);
+    // const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
     useEffect(()=>{
         getMyProductList();
     },[])
@@ -23,11 +24,27 @@ const MyProducts = ({userId}) => {
             
           }
     }
+
+    const handleEditProductClick = (productId) =>{
+      const productToEdit = myProducts.find((product)=>product.id===productId);
+      console.log("productId",productToEdit);
+      setAddItemData({
+        productName: productToEdit.productName,
+        price: productToEdit.price,
+        category:productToEdit.category,
+        productDescription: productToEdit.productDescription,
+        productImg: productToEdit.productImg,
+      })
+      // setCurrentEditingProductId(productId);
+      setModalShow(true);
+      setShowUpdate(true);
+    }
+
   return (
     <>
       {myProducts.map((item,index)=>{
             return(
-              <ProductCard key={index} item={item}/>
+              <ProductCard key={index} item={item} handleEditProductClick={handleEditProductClick} showAddItem={showAddItem}/>
           )
         })}
     </>
