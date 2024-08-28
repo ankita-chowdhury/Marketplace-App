@@ -211,18 +211,6 @@ const[fetchMyProducts,setFetchMyProducts]=useState(false);
           })
       }
 
-      const deleteProduct = async(productId) =>{
-        try{
-          const response = await axios.delete(`${BASE_URL}/products/${productId}`)
-          console.log('Item deleted successfully:', response.data);
-          // setFetchAgain(true);
-          productApiCall();
-        }
-        catch(e){
-          console.log(e);
-        }
-      }
-
       
 
       const saveProductEdit = async() =>{

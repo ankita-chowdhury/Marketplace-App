@@ -25,6 +25,18 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
           }
     }
 
+    const deleteProduct = async(productId) =>{
+      try{
+        const response = await axios.delete(`${BASE_URL}/products/${productId}`)
+        console.log('Item deleted successfully:', response.data);
+        // setFetchAgain(true);
+        getMyProductList();
+      }
+      catch(e){
+        console.log(e);
+      }
+    }
+
     const handleEditProductClick = (productId) =>{
       const productToEdit = myProducts.find((product)=>product.id===productId);
       setAddItemData({
@@ -43,7 +55,7 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
     <>
       {myProducts.map((item,index)=>{
             return(
-              <ProductCard key={index} item={item} handleEditProductClick={handleEditProductClick} showAddItem={showAddItem}/>
+              <ProductCard key={index} item={item} handleEditProductClick={handleEditProductClick} deleteProduct={deleteProduct} showAddItem={showAddItem}/>
           )
         })}
     </>
