@@ -12,7 +12,6 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
       sortByItems(sortByValue);
     },[sortByValue])
     const sortByItems = (inputFieldVal) =>{
-      console.log("inputFieldValue",inputFieldVal);
       const tempProducts = [...myProducts];
       if(inputFieldVal==="lowToHigh"){
         tempProducts.sort((a,b)=>a.price-b.price);
@@ -21,7 +20,6 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
         tempProducts.sort((a,b)=>b.price-a.price);
       }
       else if(inputFieldVal==="newFirst"){
-        console.log("inside new first");
         tempProducts.sort((a, b) => {
           const dateA = new Date(a.productListingDate.split('-').reverse().join('-'));
           const dateB = new Date(b.productListingDate.split('-').reverse().join('-'));
@@ -29,14 +27,12 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
         });
       }
       else if(inputFieldVal==="oldItems"){
-        console.log("inside old first");
         tempProducts.sort((a, b) => {
           const dateA = new Date(a.productListingDate.split('-').reverse().join('-'));
           const dateB = new Date(b.productListingDate.split('-').reverse().join('-'));
           return dateA - dateB;
         });
       }
-      console.log("tempProducts",tempProducts);
       setMyProducts(tempProducts);
     }
     const getMyProductList = async() =>{
@@ -59,7 +55,6 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
     const deleteProduct = async(productId) =>{
       try{
         const response = await axios.delete(`${BASE_URL}/products/${productId}`)
-        console.log('Item deleted successfully:', response.data);
         // setFetchAgain(true);
         getMyProductList();
       }
