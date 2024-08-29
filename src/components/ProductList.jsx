@@ -3,7 +3,7 @@ import axios from 'axios';
 import BASE_URL from './ApiServices';
 import ProductCard from './ProductCard';
 
-const ProductList = ({userId,sortByValue}) => {
+const ProductList = ({userId,sortByValue,filterSectionItems}) => {
     const[productListItem,setProductListItem]=useState([]);
 
     useEffect(()=>{
@@ -13,6 +13,9 @@ const ProductList = ({userId,sortByValue}) => {
     useEffect(()=>{
       sortByItems(sortByValue);
     },[sortByValue])
+    useEffect(()=>{
+      console.log("filter section items",filterSectionItems);
+    },[filterSectionItems])
     const sortByItems = (inputFieldVal) =>{
       const tempProducts = [...productListItem];
       if(inputFieldVal==="lowToHigh"){

@@ -53,21 +53,8 @@ const[sortByValue,setSortByValue]=useState("");
         }        
         const parsedUser = JSON.parse(loginKey);
         getUserDetails(parsedUser);
-        filterItems("productList","");
       },[])
     
-      useEffect(()=>{
-      applyFilters();
-    },[filterSectionItems])
-    
-    const applyFilters = () => {
-      const activeFilters = filterSectionItems
-        .filter((item) => item.check)
-        .map((item) => item.name);
-  
-      filterItems("productList", activeFilters);
-    };
-
       const getUserDetails = async(localData) =>{
         try{
           const response = await axios.get(`${BASE_URL}/users?email=${localData.email}`)
@@ -78,34 +65,15 @@ const[sortByValue,setSortByValue]=useState("");
         }
       }
 
-      const filterItems = (inputName, activeFilters) => {
-        let tempProducts = productItem;
-        console.log("activeFilters",activeFilters);
-        // Apply category filtering
-        if (activeFilters.length > 0) {
-          tempProducts = tempProducts.filter((item) =>
-            activeFilters.includes(item.category)
-          );
-        }
-        console.log("temp products",tempProducts);
+     
+
+      const handleFilter = (inputName) =>{
         if (inputName === "myitems") {
-          tempProducts = tempProducts.filter(
-            (item) => item.sellerId === userDetails.id
-          );
           setShowAddItem(true);
         } else if (inputName === "productList") {
-          tempProducts = tempProducts.filter(
-            (item) => item.sellerId !== userDetails.id
-          );
           setShowAddItem(false);
-        }
-    
-        setFilteredProducts(tempProducts);
-      };
-
-      const handleFilter = (inputName,cateGory) =>{
-        filterItems(inputName,cateGory);
       }
+    }
 
       const handleSortBy = (inputFieldVal) =>{
         setSortByValue(inputFieldVal);
@@ -223,8 +191,8 @@ const[sortByValue,setSortByValue]=useState("");
       <div className="dasboard-container">
         <FilterSection filterSectionItems={filterSectionItems} setFilterSectionItems={setFilterSectionItems}/>
         <div className="product-list-section">
-          {showAddItem?<MyProducts userId={userDetails?.id} setModalShow={setModalShow} setShowUpdate={setShowUpdate} showAddItem={showAddItem} setAddItemData={setAddItemData} setCurrentEditingProductId={setCurrentEditingProductId} fetchMyProducts={fetchMyProducts} setFetchMyProducts={setFetchMyProducts} sortByValue={sortByValue}/>:
-          <ProductList userId={userDetails?.id} sortByValue={sortByValue}/>}
+          {showAddItem?<MyProducts userId={userDetails?.id} setModalShow={setModalShow} setShowUpdate={setShowUpdate} showAddItem={showAddItem} setAddItemData={setAddItemData} setCurrentEditingProductId={setCurrentEditingProductId} fetchMyProducts={fetchMyProducts} setFetchMyProducts={setFetchMyProducts} sortByValue={sortByValue} filterSectionItems={filterSectionItems}/>:
+          <ProductList userId={userDetails?.id} sortByValue={sortByValue} filterSectionItems={filterSectionItems}/>}
         </div>
       </div>
       {modalShow && <div className="modal" tabIndex="-1" role="dialog">

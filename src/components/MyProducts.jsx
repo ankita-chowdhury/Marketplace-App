@@ -3,16 +3,42 @@ import axios from 'axios'
 import BASE_URL from './ApiServices';
 import ProductCard from './ProductCard';
 
-const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemData,setCurrentEditingProductId,fetchMyProducts,setFetchMyProducts,sortByValue}) => {
+const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemData,setCurrentEditingProductId,fetchMyProducts,setFetchMyProducts,sortByValue,filterSectionItems}) => {
     const [myProducts,setMyProducts]=useState([]);
+    const[filterProducts,setFilterProducts]=useState([]);
     useEffect(()=>{
         getMyProductList();
     },[fetchMyProducts])
     useEffect(()=>{
       sortByItems(sortByValue);
     },[sortByValue])
+    useEffect(()=>{
+      applyFilters();
+    },[filterSectionItems])
+
+    const applyFilters = () => {
+      const activeFilters = filterSectionItems
+        .filter((item) => item.check)
+        .map((item) => item.name);
+  
+      filterItems(activeFilters);
+    };
+
+    const filterItems = (activeFilters) => {
+      let tempProducts = [...myProducts];
+      console.log("activeFilters",activeFilters);
+      // Apply category filtering
+      if (activeFilters.length > 0) {
+        tempProducts = tempProducts.filter((item) =>
+          activeFilters.includes(item.category)
+        );
+      }
+      console.log("temp products",tempProducts);
+      setFilterProducts(tempProducts);
+    };
+
     const sortByItems = (inputFieldVal) =>{
-      const tempProducts = [...myProducts];
+      const tempProducts = [...filterProducts];
       if(inputFieldVal==="lowToHigh"){
         tempProducts.sort((a,b)=>a.price-b.price);
       }
@@ -35,6 +61,7 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
       }
       setMyProducts(tempProducts);
     }
+
     const getMyProductList = async() =>{
         try{
             const response = await axios.get(`${BASE_URL}/products`,
@@ -43,6 +70,7 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
             }
             );
             setMyProducts(response.data);
+            setFilterProducts(response.data);
             setFetchMyProducts(false);
             // setFetchAgain(false);
           }
@@ -64,7 +92,7 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
     }
 
     const handleEditProductClick = (productId) =>{
-      const productToEdit = myProducts.find((product)=>product.id===productId);
+      const productToEdit = filterProducts.find((product)=>product.id===productId);
       setAddItemData({
         productName: productToEdit.productName,
         price: productToEdit.price,
@@ -79,7 +107,7 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
 
   return (
     <>
-      {myProducts.map((item,index)=>{
+      {filterProducts.map((item,index)=>{
             return(
               <ProductCard key={index} item={item} handleEditProductClick={handleEditProductClick} deleteProduct={deleteProduct} showAddItem={showAddItem}/>
           )
