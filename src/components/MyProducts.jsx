@@ -3,11 +3,42 @@ import axios from 'axios'
 import BASE_URL from './ApiServices';
 import ProductCard from './ProductCard';
 
-const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemData,setCurrentEditingProductId,fetchMyProducts,setFetchMyProducts}) => {
+const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemData,setCurrentEditingProductId,fetchMyProducts,setFetchMyProducts,sortByValue}) => {
     const [myProducts,setMyProducts]=useState([]);
     useEffect(()=>{
         getMyProductList();
     },[fetchMyProducts])
+    useEffect(()=>{
+      sortByItems(sortByValue);
+    },[sortByValue])
+    const sortByItems = (inputFieldVal) =>{
+      console.log("inputFieldValue",inputFieldVal);
+      const tempProducts = [...myProducts];
+      if(inputFieldVal==="lowToHigh"){
+        tempProducts.sort((a,b)=>a.price-b.price);
+      }
+      else if(inputFieldVal==="highToLow"){
+        tempProducts.sort((a,b)=>b.price-a.price);
+      }
+      else if(inputFieldVal==="newFirst"){
+        console.log("inside new first");
+        tempProducts.sort((a, b) => {
+          const dateA = new Date(a.productListingDate.split('-').reverse().join('-'));
+          const dateB = new Date(b.productListingDate.split('-').reverse().join('-'));
+          return dateB - dateA;
+        });
+      }
+      else if(inputFieldVal==="oldItems"){
+        console.log("inside old first");
+        tempProducts.sort((a, b) => {
+          const dateA = new Date(a.productListingDate.split('-').reverse().join('-'));
+          const dateB = new Date(b.productListingDate.split('-').reverse().join('-'));
+          return dateA - dateB;
+        });
+      }
+      console.log("tempProducts",tempProducts);
+      setMyProducts(tempProducts);
+    }
     const getMyProductList = async() =>{
         try{
             const response = await axios.get(`${BASE_URL}/products`,

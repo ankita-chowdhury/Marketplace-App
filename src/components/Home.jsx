@@ -20,15 +20,14 @@ const Home = () => {
     const[showUpdate,setShowUpdate]=useState(false);
     const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
     const[addItemData,setAddItemData]=useState({
-      productId: "",
       productName: "",
       productImg: "",
       productDescription: "",
-      price: null,
+      price: 0.0,
       category: "",
       rating: 0.0,
       sellerId: "",
-      buyerId: null,
+      buyerId: "",
       soldFlag: false,
       productListingDate: "",
     })
@@ -45,6 +44,7 @@ const Home = () => {
 ]);
 
 const[fetchMyProducts,setFetchMyProducts]=useState(false);
+const[sortByValue,setSortByValue]=useState("");
   
     useEffect(()=>{
         const loginKey=localStorage.getItem('loginKey');
@@ -108,38 +108,21 @@ const[fetchMyProducts,setFetchMyProducts]=useState(false);
       }
 
       const handleSortBy = (inputFieldVal) =>{
-        console.log("inputVal",inputFieldVal);
-        sortByItems(inputFieldVal);
+        setSortByValue(inputFieldVal);
       }
 
-      const sortByItems = (inputFieldVal) =>{
-        const tempProducts = [...filteredProducts];
-        if(inputFieldVal==="lowToHigh"){
-          tempProducts.sort((a,b)=>a.price-b.price);
-        }
-        else if(inputFieldVal==="highToLow"){
-          tempProducts.sort((a,b)=>b.price-a.price);
-        }
-        else if(inputFieldVal==="newFirst"){
-          tempProducts.sort((a,b)=>new Date(a.productListingDate) - new Date(b.productListingDate));
-        }
-        else if(inputFieldVal==="oldFirst"){
-          tempProducts.sort((a,b)=>new Date(b.productListingDate) - new Date(a.productListingDate));
-        }
-        setFilteredProducts(tempProducts);
-      }
+      
 
       const handleModalShow = () =>{
         setAddItemData({
-          productId: "",
           productName: "",
           productImg: "",
           productDescription: "",
-          price: null,
+          price: 0.0,
           category: "",
           rating: 0.0,
           sellerId: "",
-          buyerId: null,
+          buyerId: "",
           soldFlag: false,
           productListingDate: "",
         })
@@ -188,11 +171,10 @@ const[fetchMyProducts,setFetchMyProducts]=useState(false);
       }
 
       const handleAddItem = () =>{
-          const response= axios.post(`${BASE_URL}/products`,addItemData)
+          axios.post(`${BASE_URL}/products`,addItemData)
           .then((response)=>{
               setModalShow(false);
               setFetchMyProducts(true);
-              // setFetchAgain(true);
           })
           .catch((e)=>{
             console.log(e);
@@ -241,7 +223,8 @@ const[fetchMyProducts,setFetchMyProducts]=useState(false);
       <div className="dasboard-container">
         <FilterSection filterSectionItems={filterSectionItems} setFilterSectionItems={setFilterSectionItems}/>
         <div className="product-list-section">
-          {showAddItem?<MyProducts userId={userDetails?.id} setModalShow={setModalShow} setShowUpdate={setShowUpdate} showAddItem={showAddItem} setAddItemData={setAddItemData} setCurrentEditingProductId={setCurrentEditingProductId} fetchMyProducts={fetchMyProducts} setFetchMyProducts={setFetchMyProducts}/>:<ProductList userId={userDetails?.id}/>}
+          {showAddItem?<MyProducts userId={userDetails?.id} setModalShow={setModalShow} setShowUpdate={setShowUpdate} showAddItem={showAddItem} setAddItemData={setAddItemData} setCurrentEditingProductId={setCurrentEditingProductId} fetchMyProducts={fetchMyProducts} setFetchMyProducts={setFetchMyProducts} sortByValue={sortByValue}/>:
+          <ProductList userId={userDetails?.id} sortByValue={sortByValue}/>}
         </div>
       </div>
       {modalShow && <div className="modal" tabIndex="-1" role="dialog">

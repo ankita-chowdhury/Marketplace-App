@@ -3,7 +3,7 @@ import axios from 'axios';
 import BASE_URL from './ApiServices';
 import ProductCard from './ProductCard';
 
-const ProductList = (userId) => {
+const ProductList = ({userId,sortByValue}) => {
     const[productListItem,setProductListItem]=useState([]);
 
     useEffect(()=>{
@@ -15,7 +15,7 @@ const ProductList = (userId) => {
         try {
             const response = await axios.get(`${BASE_URL}/products`);
             const tempProducts = response.data;
-            const filterProducts  = tempProducts.filter((item)=>item.sellerId!==userId.userId)
+            const filterProducts  = tempProducts.filter((item)=>item.sellerId!==userId)
             console.log("filterProducts",filterProducts);
             setProductListItem(filterProducts);
         } 
