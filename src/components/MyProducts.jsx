@@ -59,7 +59,7 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
           return dateA - dateB;
         });
       }
-      setMyProducts(tempProducts);
+      setFilterProducts(tempProducts);
     }
 
     const getMyProductList = async() =>{
