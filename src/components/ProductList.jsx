@@ -5,19 +5,37 @@ import ProductCard from './ProductCard';
 
 const ProductList = ({userId,sortByValue,filterSectionItems}) => {
     const[productListItem,setProductListItem]=useState([]);
+    const[filterProducts,setFilterProducts]=useState([]);
 
     useEffect(()=>{
         getProductListItem();
-        
-    },[])
+    },[userId])
     useEffect(()=>{
       sortByItems(sortByValue);
     },[sortByValue])
     useEffect(()=>{
-      console.log("filter section items",filterSectionItems);
+      applyFilters();
     },[filterSectionItems])
+    const applyFilters = () => {
+      const activeFilters = filterSectionItems
+        .filter((item) => item.check)
+        .map((item) => item.name);
+        filterItems(activeFilters);
+    };
+
+    const filterItems = (activeFilters) => {
+      let tempProducts = [...productListItem];
+      // Apply category filtering
+      if (activeFilters.length > 0) {
+        tempProducts = tempProducts.filter((item) =>
+          activeFilters.includes(item.category)
+        );
+      }
+      setFilterProducts(tempProducts);
+    };
+
     const sortByItems = (inputFieldVal) =>{
-      const tempProducts = [...productListItem];
+      const tempProducts = [...filterProducts];
       if(inputFieldVal==="lowToHigh"){
         tempProducts.sort((a,b)=>a.price-b.price);
       }
@@ -38,16 +56,16 @@ const ProductList = ({userId,sortByValue,filterSectionItems}) => {
           return dateA - dateB;
         });
       }
-      setProductListItem(tempProducts);
+      setFilterProducts(tempProducts);
     }
 
    const getProductListItem = async() =>{
         try {
             const response = await axios.get(`${BASE_URL}/products`);
             const tempProducts = response.data;
-            const filterProducts  = tempProducts.filter((item)=>item.sellerId!==userId)
-            console.log("filterProducts",filterProducts);
-            setProductListItem(filterProducts);
+            const filterItems  = tempProducts.filter((item)=>item.sellerId!==userId)
+            setProductListItem(filterItems);
+            setFilterProducts(filterItems);
         } 
         catch (e) {
             console.log(e);
@@ -56,7 +74,7 @@ const ProductList = ({userId,sortByValue,filterSectionItems}) => {
   return (
     <>
       {
-        productListItem.map((item,index)=>{
+        filterProducts.map((item,index)=>{
             return(
               <ProductCard key={index} item={item}/>
           )

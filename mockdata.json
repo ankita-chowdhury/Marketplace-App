@@ -198,8 +198,8 @@
       "id": "8b66"
     },
     {
-      "productName": "Flower Vase 3",
-      "price": "1000",
+      "productName": "Flower Vase",
+      "price": "3500",
       "category": "Home Decor & Lights",
       "productDescription": "Japanese flower vase ",
       "productImg": "https://m.media-amazon.com/images/I/619vvcyPS4L.jpg",
@@ -208,11 +208,11 @@
       "id": "4967"
     },
     {
-      "productName": "Night Lamp 4",
-      "price": "2599.99",
-      "category": "Home Decor & Lights",
-      "productDescription": "Bedside Side Table Lamp with Wooden Base for Night Reading",
-      "productImg": "https://m.media-amazon.com/images/I/81nij8Qz2vL._AC_UF894,1000_QL80_.jpg",
+      "productName": "Nike Air Max 90",
+      "price": "10999.99",
+      "category": "Footwear",
+      "productDescription": "Nike Air Max 90\nWomen's Shoes",
+      "productImg": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eacfafe6-842a-4f87-9835-997e81e9b12b/WMNS+AIR+MAX+90.png",
       "sellerId": "e9f4",
       "productListingDate": "30-08-2024",
       "id": "a32d"
@@ -251,7 +251,7 @@
       "productListingDate": "22-08-2024"
     },
     {
-      "productName": "Night Lamp ",
+      "productName": "Night Lamp 2",
       "price": "7291.99",
       "category": "Home Decor & Lights",
       "productDescription": "Night Owl (Gold, Black) Marble Study Table Lamp",
@@ -267,7 +267,7 @@
       "productDescription": "Artificial Cute Plants Mini Potted Plant Small Greenery Decor for Indoor Home",
       "productImg": "https://rukminim2.flixcart.com/image/850/1000/xif0q/artificial-plant/y/k/k/37-yes-pj-2748-a-prajna-original-imahfpsygvez3gzh.jpeg?q=20&crop=false",
       "sellerId": "249d",
-      "productListingDate": "24-08-2024",
+      "productListingDate": "07-04-2024",
       "id": "e21b"
     },
     {

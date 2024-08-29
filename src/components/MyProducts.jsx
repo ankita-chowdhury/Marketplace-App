@@ -26,14 +26,12 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
 
     const filterItems = (activeFilters) => {
       let tempProducts = [...myProducts];
-      console.log("activeFilters",activeFilters);
       // Apply category filtering
       if (activeFilters.length > 0) {
         tempProducts = tempProducts.filter((item) =>
           activeFilters.includes(item.category)
         );
       }
-      console.log("temp products",tempProducts);
       setFilterProducts(tempProducts);
     };
 

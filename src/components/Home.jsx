@@ -104,7 +104,6 @@ const[sortByValue,setSortByValue]=useState("");
       }
 
       const handleAddChange = (inputVal,inputName) =>{
-        console.log("input->",inputVal);
           if(inputName==='item-name'){
             setAddItemData((oldItems)=>{
               return{...oldItems,productName:inputVal}
@@ -154,7 +153,6 @@ const[sortByValue,setSortByValue]=useState("");
       const saveProductEdit = async() =>{
         try{
           const response = await axios.put(`${BASE_URL}/products/${currentEditingProductId}`, addItemData);
-          console.log('Item updated successfully:', response.data);
           setModalShow(false);
           // setFetchAgain(true);
           setFetchMyProducts(true);
