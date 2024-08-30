@@ -574,6 +574,18 @@ input{
   margin: 10px;
   min-height: 60vh;
 }
+.details-box{
+  display: flex;
+  justify-content: flex-start;
+}
+.details-box-img{
+  width: 300px;
+  margin-right: 10px;
+}
+.details-box-img img{
+  width: 100%;
+  
+}
 
 
 

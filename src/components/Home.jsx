@@ -106,6 +106,7 @@ const[sortByValue,setSortByValue]=useState("");
 
       const handleModalClose = () =>{
         setModalShow(false);
+        setShowUpdate(false);
       }
 
       const handleAddChange = (inputVal,inputName) =>{
