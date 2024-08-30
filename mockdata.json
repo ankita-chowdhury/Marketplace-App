@@ -321,12 +321,32 @@
       "productListingDate": "30-08-2024"
     },
     {
-      "id": "b4ad",
       "productName": "Gaming Laptop",
-      "productImg": "https://images-cdn.ubuy.co.in/64c187fc18acd379ae70426e-asus-rog-strix-15-6-r9-rtx-3060-gaming.jpg",
-      "productDescription": "ASUS ROG Strix G513 R9 Gaming Laptop",
       "price": "183999.99",
-      "category": "",
+      "category": "Electronics",
+      "productDescription": "ASUS ROG Strix G513 R9 Gaming Laptop",
+      "productImg": "https://images-cdn.ubuy.co.in/64c187fc18acd379ae70426e-asus-rog-strix-15-6-r9-rtx-3060-gaming.jpg",
+      "sellerId": "e9f4",
+      "productListingDate": "30-08-2024",
+      "id": "b4ad"
+    },
+    {
+      "productName": "Wired Mechanical Gaming Keyboard",
+      "price": "52116.99",
+      "category": "Gaming Product",
+      "productDescription": "Razer BlackWidow V4 Pro Wired Mechanical Gaming Keyboard",
+      "productImg": "https://m.media-amazon.com/images/I/81L4FpeS3VL.jpg",
+      "sellerId": "e9f4",
+      "productListingDate": "30-08-2024",
+      "id": "dada"
+    },
+    {
+      "id": "cb07",
+      "productName": "Headphone",
+      "productImg": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1682587116/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/271047_0_yaama6.png?tr=w-640",
+      "productDescription": "SONY WH-CH520 Bluetooth Headphone with Mic (30mm Driver, On Ear, Blue)",
+      "price": "5990.99",
+      "category": "Audio Product",
       "rating": 0,
       "sellerId": "e9f4",
       "buyerId": "",

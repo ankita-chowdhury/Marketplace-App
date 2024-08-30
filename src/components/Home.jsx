@@ -8,6 +8,7 @@ import FilterSection from './FilterSection';
 import BASE_URL from './ApiServices';
 import MyProducts from './MyProducts';
 import ProductList from './ProductList';
+import CloseIcon from '../assets/images/close.png'
 
 const Home = () => {
     const navigate = useNavigate();
@@ -101,6 +102,10 @@ const[sortByValue,setSortByValue]=useState("");
         else if(modalShow===false){
           setModalShow(true);
         }
+      }
+
+      const handleModalClose = () =>{
+        setModalShow(false);
       }
 
       const handleAddChange = (inputVal,inputName) =>{
@@ -198,7 +203,7 @@ const[sortByValue,setSortByValue]=useState("");
             <div className="modal-heading">
                   {!showUpdate && <h4>Add Item</h4>}
                   {showUpdate && <h4>Update Item Details</h4>}
-                  <span onClick={()=>handleModalShow()}>x</span>
+                  <span onClick={()=>handleModalClose()}> <img src={CloseIcon} alt="" /> </span>
             </div>
             <div className="modal-body">
               <label htmlFor="item-name">Product Name</label>
@@ -234,7 +239,7 @@ const[sortByValue,setSortByValue]=useState("");
               <div className="add-item-form-btn">
               {!showUpdate && <button className='add-btn-save' onClick={()=>handleAddItem()}>Add</button>}
               {showUpdate &&<button className='add-btn-save' onClick={()=>saveProductEdit()}>Save Changes</button>} 
-              <button className='add-btn-cancel'>Cancel</button>              
+              <button className='add-btn-cancel' onClick={()=>handleModalClose()}>Cancel</button>              
               </div>
               
             </div>

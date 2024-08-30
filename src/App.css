@@ -277,9 +277,9 @@ input{
   border: 1px dashed transparent;
 }
 .add-btn-save:hover{
-  background-color: #fff;
-  color: #3A5B22;
-  border: 1px solid #3A5B22;
+  background-color: #45873e85;
+  color: #fff;
+  border: 1px dashed transparent;
 }
 .view-details,.add-btn-cancel{
   background-color: #fff;
@@ -292,7 +292,7 @@ input{
   border: 1px solid transparent;
 }
 .add-btn-cancel:hover{
-  background-color: #3A5B22;
+  background-color: #45873e85;
   color: #fff;
   border: 1px solid transparent;
 }
@@ -409,14 +409,13 @@ input{
   align-items: center;
   padding: 10px;
 }
-.modal-heading span{
+/* .modal-heading span{
   text-align: center;
   padding: 3px;
   width: 25px;
   border-radius: 50%;
   border: 1px solid #3A5B22;
-}
-
+} */
 .select-category select{
   padding: 10px;
   margin-top: 7px;
@@ -516,6 +515,7 @@ input{
 }
 .inner-transaction-div{
   padding: 20px;
+  color: #3A5B22;
 }
 .inner-transaction-div h2{
   text-align: left;
