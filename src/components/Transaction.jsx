@@ -6,7 +6,7 @@ import Updown from "../assets/images/Updown.png"
 
 const Transaction = () => {
   const[purchaseItem,setPurchaseItem]=useState([]); 
-  // const[totalPrice,setTotalPrice]=useState
+  const[sortState,setSortState]=useState('asc');
 
   useEffect(()=>{
     getTransactionList();
@@ -22,6 +22,37 @@ const Transaction = () => {
     }
 
   }
+
+  const handleSortChange = (inputName) =>{
+    if(sortState==='asc'){
+      setSortState('desc');
+    }
+    else if(sortState==='desc'){
+      setSortState('asc');
+    }
+    handleSort(inputName);
+  }
+
+  const handleSort = (inputField) =>{
+    const tempProducts=[...purchaseItem];
+    if(sortState==="asc"){
+        if(inputField==='price'){
+          tempProducts.sort((a,b)=>a.price - b.price);
+        }
+        else if (inputField === 'purchase-date') {
+          tempProducts.sort((a, b) => new Date(a.productPurchaseDate) - new Date(b.productPurchaseDate));
+        }
+    }
+    else if(sortState==="desc"){
+      if(inputField==='price'){
+        tempProducts.sort((a,b)=>b.price - a.price);
+      }
+      else if (inputField === 'purchase-date') {
+        tempProducts.sort((a, b) => new Date(b.productPurchaseDate) - new Date(a.productPurchaseDate));
+      }
+    }
+    setPurchaseItem(tempProducts);
+}
   return (
     <div className='box-container'>
       <Navbar/>
@@ -36,8 +67,8 @@ const Transaction = () => {
               <tr>
                 <th>Image</th>
                 <th>Product Name</th>
-                <th>Price<span className='updown-icon'><img src={Updown} alt="" /></span></th>
-                <th>Purchase Date<span className='updown-icon'><img src={Updown} alt="" /></span></th>
+                <th>Price<span className='updown-icon' onClick={()=>handleSortChange('price')}><img src={Updown} alt="" /></span></th>
+                <th>Purchase Date<span className='updown-icon' onClick={()=>handleSortChange('purchase-date')}><img src={Updown} alt="" /></span></th>
               </tr>
             </thead>
             <tbody>
