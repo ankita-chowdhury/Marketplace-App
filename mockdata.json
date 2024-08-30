@@ -306,6 +306,32 @@
       "buyerId": "",
       "soldFlag": false,
       "productListingDate": "29-04-2024"
+    },
+    {
+      "id": "88fe",
+      "productName": "PHILIPS Air Fryer",
+      "productImg": "https://m.media-amazon.com/images/I/71ZJSl4lN2L.jpg",
+      "productDescription": "PHILIPS Air Fryer HD9200/90, uses up to 90% less fat, 1400W, 4.1 Liter, with Rapid Air Technology (Black)",
+      "price": "14599.99",
+      "category": "Household Appliances",
+      "rating": 0,
+      "sellerId": "e9f4",
+      "buyerId": "",
+      "soldFlag": false,
+      "productListingDate": "30-08-2024"
+    },
+    {
+      "id": "b4ad",
+      "productName": "Gaming Laptop",
+      "productImg": "https://images-cdn.ubuy.co.in/64c187fc18acd379ae70426e-asus-rog-strix-15-6-r9-rtx-3060-gaming.jpg",
+      "productDescription": "ASUS ROG Strix G513 R9 Gaming Laptop",
+      "price": "183999.99",
+      "category": "",
+      "rating": 0,
+      "sellerId": "e9f4",
+      "buyerId": "",
+      "soldFlag": false,
+      "productListingDate": "30-08-2024"
     }
   ],
   "transactionHistory": [
@@ -318,8 +344,8 @@
       "productImg": "https://m.media-amazon.com/images/I/71v2jVh6nIL._SX679_.jpg",
       "sellerId": "U001",
       "buyerId": "U002",
-      "productListingDate": "2024-07-01",
-      "productPurchaseDate": "2024-07-15",
+      "productListingDate": "01-07-2024",
+      "productPurchaseDate": "15-07-2024",
       "id": "eea6"
     },
     {
@@ -331,8 +357,8 @@
       "productImg": "https://m.media-amazon.com/images/I/51hJIsWMagL._AC_UF1000,1000_QL80_.jpg",
       "sellerId": "U003",
       "buyerId": "U001",
-      "productListingDate": "2024-08-01",
-      "productPurchaseDate": "2024-08-10",
+      "productListingDate": "01-08-2024",
+      "productPurchaseDate": "10-08-2024",
       "id": "adaf"
     },
     {
@@ -344,8 +370,8 @@
       "productImg": "https://m.media-amazon.com/images/I/312Gw7w4CVL._SX300_SY300_QL70_FMwebp_.jpg",
       "sellerId": "U002",
       "buyerId": "U003",
-      "productListingDate": "2024-07-20",
-      "productPurchaseDate": "2024-08-02",
+      "productListingDate": "20-07-2024",
+      "productPurchaseDate": "02-08-2024",
       "id": "b1d6"
     },
     {
@@ -357,8 +383,8 @@
       "productImg": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MT2Y3ref_VW_34FR+watch-case-41-aluminum-pink-nc-s9_VW_34FR+watch-face-41-aluminum-pink-s9_VW_34FR_WF_CO_GEO_IN?wid=5120&hei=3280&bgc=fafafa&trim=1&fmt=p-jpg&qlt=80&.v=Z0VkY0NhREJ6WjFzb3N5VEYrKzFoQjJXVW9BNEhuTURaNVlmRjZxRXZQeXlESTJEU21VQ3kwMTlnSk9SWXc3T1lmQTM3dWwxOEVOeWkrSnZJS3hUWHNZUk12MUVIVHRxUC9tRlNJeUZ4LzNvRFBDZ2ppL3VKbG5SaHlPeG9SOGNWRGRkNWd6OXhEb2lBTXYxZnpxbGdLMCtHMVlHSGttWG40UU14R241ekFhYmZuSTdFUnErS0g3SWYxazQrNDdyRzE3K0tORmZaUy9vOVdqTEp2dmJNMGdNL3BvRkdKVDVQdS91YnVnbnJuZ3JPZ0xXb3dPVUV6bytXY1hzR2F1cg==",
       "sellerId": "U003",
       "buyerId": null,
-      "productListingDate": "2024-08-05",
-      "productPurchaseDate": "2024-04-02",
+      "productListingDate": "05-08-2024",
+      "productPurchaseDate": "02-10-2024",
       "id": "8c0d"
     },
     {
@@ -370,8 +396,8 @@
       "productImg": "https://s.yimg.com/uu/api/res/1.2/LBRgeGZAwDPBCBk3gvRlvw--~B/Zmk9c3RyaW07aD03MjA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2023-05/5a95e9e0-edae-11ed-9efe-f952d9118102",
       "sellerId": "S002",
       "buyerId": "B001",
-      "productListingDate": "2024-07-25",
-      "productPurchaseDate": "2024-07-30",
+      "productListingDate": "25-07-2024",
+      "productPurchaseDate": "30-11-2024",
       "id": "dc19"
     },
     {
@@ -383,8 +409,8 @@
       "productImg": "https://www.reliancedigital.in/medias/JBL-GO-Essential-Bluetooth-Speaker-493711858-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w3MzkyMXxpbWFnZS9qcGVnfGltYWdlcy9oYzgvaDU2Lzk5OTMwNzA0NzczNDIuanBnfDk2ZTM3ZTBjOTc2ZjI2ZDRlYmU1MjhlZDgwMTM3NDliMjQ2ZWRjMDIzZDc1ZmM5MWQxM2YwMTU2M2NjNTQ5ZTY",
       "sellerId": "S003",
       "buyerId": null,
-      "productListingDate": "2024-07-28",
-      "productPurchaseDate": "2024-12-28",
+      "productListingDate": "28-09-2024",
+      "productPurchaseDate": "26-12-2024",
       "id": "1c10"
     }
   ]

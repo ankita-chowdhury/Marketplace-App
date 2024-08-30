@@ -39,16 +39,24 @@ const Transaction = () => {
         if(inputField==='price'){
           tempProducts.sort((a,b)=>a.price - b.price);
         }
-        else if (inputField === 'purchase-date') {
-          tempProducts.sort((a, b) => new Date(a.productPurchaseDate) - new Date(b.productPurchaseDate));
+        else if(inputField==='purchase-date'){
+          tempProducts.sort((a, b) => {
+            const dateA = new Date(a.productPurchaseDate.split('-').reverse().join('-'));
+            const dateB = new Date(b.productPurchaseDate.split('-').reverse().join('-'));
+            return dateA - dateB;
+          });
         }
     }
     else if(sortState==="desc"){
       if(inputField==='price'){
         tempProducts.sort((a,b)=>b.price - a.price);
       }
-      else if (inputField === 'purchase-date') {
-        tempProducts.sort((a, b) => new Date(b.productPurchaseDate) - new Date(a.productPurchaseDate));
+      else if(inputField==='purchase-date'){
+        tempProducts.sort((a, b) => {
+          const dateA = new Date(a.productPurchaseDate.split('-').reverse().join('-'));
+          const dateB = new Date(b.productPurchaseDate.split('-').reverse().join('-'));
+          return dateB - dateA;
+        });
       }
     }
     setPurchaseItem(tempProducts);
