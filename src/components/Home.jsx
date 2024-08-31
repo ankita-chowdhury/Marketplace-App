@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useEffect} from 'react'
 import { useNavigate } from 'react-router';
 import Navbar from './Navbar';
-import ProductCard from './ProductCard';
 import axios from 'axios';
 import FilterSection from './FilterSection';
 import BASE_URL from './ApiServices';
@@ -12,8 +11,6 @@ import CloseIcon from '../assets/images/close.png'
 
 const Home = () => {
     const navigate = useNavigate();
-    const[productItem,setProductItem]=useState([]);
-    const[filteredProducts,setFilteredProducts]=useState([]);
     const[userDetails,setUserDetails]=useState({});
     const[showAddItem,setShowAddItem]=useState(false);
     const[modalShow,setModalShow]=useState(false);

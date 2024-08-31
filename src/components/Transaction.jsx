@@ -14,7 +14,12 @@ const Transaction = () => {
 
   const getTransactionList = async() =>{
     try{
-      const response = await axios.get(`${BASE_URL}/transactionHistory`);
+      const userId=sessionStorage.getItem('userId');
+      const parsedUserId = JSON.parse(userId);
+      const response = await axios.get(`${BASE_URL}/transactionHistory`,{
+        params:
+        {buyerId:parsedUserId}
+      });
       setPurchaseItem(response.data);
     }
     catch(e){

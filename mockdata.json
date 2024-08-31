@@ -235,7 +235,8 @@
       "productImg": "https://images.jdmagicbox.com/rep/b2b/cardio-fitness-equipment/cardio-fitness-equipment-1.jpg",
       "sellerId": "e9f4",
       "productListingDate": "29-08-2024",
-      "id": "1363"
+      "id": "1363",
+      "soldFlag": true
     },
     {
       "id": "a4b1",
@@ -258,7 +259,8 @@
       "productImg": "https://ii1.pepperfry.com/media/catalog/product/b/e/494x544/beige-cotton-table-lamp-by-foziq-beige-cotton-table-lamp-by-foziq-icdan1.jpg",
       "sellerId": "249d",
       "productListingDate": "24-08-2024",
-      "id": "ae29"
+      "id": "ae29",
+      "soldFlag": true
     },
     {
       "productName": "Plant ",
@@ -350,7 +352,7 @@
       "rating": 0,
       "sellerId": "e9f4",
       "buyerId": "",
-      "soldFlag": false,
+      "soldFlag": true,
       "productListingDate": "30-08-2024"
     }
   ],
@@ -378,6 +380,42 @@
       "buyerId": "e9f4",
       "productListingDate": "2024-08-10",
       "productPurchaseDate": "31-08-2024"
+    },
+    {
+      "id": "3cda",
+      "productId": "ae29",
+      "productName": "Night Lamp 2",
+      "price": "7291.99",
+      "category": "Home Decor & Lights",
+      "productImg": "https://ii1.pepperfry.com/media/catalog/product/b/e/494x544/beige-cotton-table-lamp-by-foziq-beige-cotton-table-lamp-by-foziq-icdan1.jpg",
+      "sellerId": "249d",
+      "buyerId": "e9f4",
+      "productListingDate": "24-08-2024",
+      "productPurchaseDate": "31-08-2024"
+    },
+    {
+      "id": "af6e",
+      "productId": "cb07",
+      "productName": "Headphone",
+      "price": "5990.99",
+      "category": "Audio Product",
+      "productImg": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1682587116/Croma%20Assets/Entertainment/Headphones%20and%20Earphones/Images/271047_0_yaama6.png?tr=w-640",
+      "sellerId": "e9f4",
+      "buyerId": "249d",
+      "productListingDate": "30-08-2024",
+      "productPurchaseDate": "31-08-2024"
+    },
+    {
+      "id": "cc4d",
+      "productId": "1363",
+      "productName": "Cardio Fitness Equipment",
+      "price": "27999.99",
+      "category": "Fitness Equipment",
+      "productImg": "https://images.jdmagicbox.com/rep/b2b/cardio-fitness-equipment/cardio-fitness-equipment-1.jpg",
+      "sellerId": "e9f4",
+      "buyerId": "249d",
+      "productListingDate": "29-08-2024",
+      "productPurchaseDate": "30-08-2024"
     }
   ]
 }
