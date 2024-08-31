@@ -95,7 +95,7 @@
       "rating": 4.7,
       "sellerId": "U003",
       "buyerId": "U001",
-      "soldFlag": true,
+      "soldFlag": false,
       "productListingDate": "2024-08-01",
       "id": "2c49"
     },
@@ -123,7 +123,7 @@
       "rating": 4.9,
       "sellerId": "S002",
       "buyerId": "B001",
-      "soldFlag": true,
+      "soldFlag": false,
       "productListingDate": "2024-07-25",
       "id": "6fde"
     },
@@ -151,7 +151,7 @@
       "rating": 4.7,
       "sellerId": "S001",
       "buyerId": "B002",
-      "soldFlag": true,
+      "soldFlag": false,
       "productListingDate": "2024-08-01",
       "id": "efbf"
     },
@@ -179,7 +179,7 @@
       "rating": 4.6,
       "sellerId": "S003",
       "buyerId": "B003",
-      "soldFlag": true,
+      "soldFlag": false,
       "productListingDate": "2024-08-08",
       "id": "feab"
     },
@@ -193,7 +193,7 @@
       "rating": 1.8,
       "sellerId": "S001",
       "buyerId": null,
-      "soldFlag": false,
+      "soldFlag": true,
       "productListingDate": "2024-08-10",
       "id": "8b66"
     },
@@ -356,82 +356,28 @@
   ],
   "transactionHistory": [
     {
-      "transactionId": "T001",
-      "productId": "P001",
+      "id": "6bbc",
+      "productId": "93cc",
       "productName": "Smartphone",
       "price": 140999.99,
-      "category": "Electronics",
+      "category": "Smartphone",
       "productImg": "https://m.media-amazon.com/images/I/71v2jVh6nIL._SX679_.jpg",
       "sellerId": "U001",
-      "buyerId": "U002",
-      "productListingDate": "01-07-2024",
-      "productPurchaseDate": "15-07-2024",
-      "id": "eea6"
+      "buyerId": "\"e9f4\"",
+      "productListingDate": "2024-07-01",
+      "productPurchaseDate": "31-08-2024"
     },
     {
-      "transactionId": "T002",
-      "productId": "P002",
-      "productName": "Laptop",
-      "price": 150999.99,
-      "category": "Computers",
-      "productImg": "https://m.media-amazon.com/images/I/51hJIsWMagL._AC_UF1000,1000_QL80_.jpg",
-      "sellerId": "U003",
-      "buyerId": "U001",
-      "productListingDate": "01-08-2024",
-      "productPurchaseDate": "10-08-2024",
-      "id": "adaf"
-    },
-    {
-      "transactionId": "T003",
-      "productId": "P003",
-      "productName": "Headphones",
-      "price": 25000.99,
-      "category": "Audio",
-      "productImg": "https://m.media-amazon.com/images/I/312Gw7w4CVL._SX300_SY300_QL70_FMwebp_.jpg",
-      "sellerId": "U002",
-      "buyerId": "U003",
-      "productListingDate": "20-07-2024",
-      "productPurchaseDate": "02-08-2024",
-      "id": "b1d6"
-    },
-    {
-      "transactionId": "T004",
-      "productId": "P004",
-      "productName": "Smartwatch",
-      "price": 41900.99,
-      "category": "Wearables",
-      "productImg": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MT2Y3ref_VW_34FR+watch-case-41-aluminum-pink-nc-s9_VW_34FR+watch-face-41-aluminum-pink-s9_VW_34FR_WF_CO_GEO_IN?wid=5120&hei=3280&bgc=fafafa&trim=1&fmt=p-jpg&qlt=80&.v=Z0VkY0NhREJ6WjFzb3N5VEYrKzFoQjJXVW9BNEhuTURaNVlmRjZxRXZQeXlESTJEU21VQ3kwMTlnSk9SWXc3T1lmQTM3dWwxOEVOeWkrSnZJS3hUWHNZUk12MUVIVHRxUC9tRlNJeUZ4LzNvRFBDZ2ppL3VKbG5SaHlPeG9SOGNWRGRkNWd6OXhEb2lBTXYxZnpxbGdLMCtHMVlHSGttWG40UU14R241ekFhYmZuSTdFUnErS0g3SWYxazQrNDdyRzE3K0tORmZaUy9vOVdqTEp2dmJNMGdNL3BvRkdKVDVQdS91YnVnbnJuZ3JPZ0xXb3dPVUV6bytXY1hzR2F1cg==",
-      "sellerId": "U003",
-      "buyerId": null,
-      "productListingDate": "05-08-2024",
-      "productPurchaseDate": "02-10-2024",
-      "id": "8c0d"
-    },
-    {
-      "transactionId": "T005",
-      "productId": "P005",
-      "productName": "Gaming Console",
-      "price": 37499.99,
-      "category": "Gaming",
-      "productImg": "https://s.yimg.com/uu/api/res/1.2/LBRgeGZAwDPBCBk3gvRlvw--~B/Zmk9c3RyaW07aD03MjA7dz0xMjgwO2FwcGlkPXl0YWNoeW9u/https://s.yimg.com/os/creatr-uploaded-images/2023-05/5a95e9e0-edae-11ed-9efe-f952d9118102",
-      "sellerId": "S002",
-      "buyerId": "B001",
-      "productListingDate": "25-07-2024",
-      "productPurchaseDate": "30-11-2024",
-      "id": "dc19"
-    },
-    {
-      "transactionId": "T006",
-      "productId": "P006",
-      "productName": "Bluetooth Speaker",
-      "price": 3999.99,
-      "category": "Audio",
-      "productImg": "https://www.reliancedigital.in/medias/JBL-GO-Essential-Bluetooth-Speaker-493711858-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w3MzkyMXxpbWFnZS9qcGVnfGltYWdlcy9oYzgvaDU2Lzk5OTMwNzA0NzczNDIuanBnfDk2ZTM3ZTBjOTc2ZjI2ZDRlYmU1MjhlZDgwMTM3NDliMjQ2ZWRjMDIzZDc1ZmM5MWQxM2YwMTU2M2NjNTQ5ZTY",
-      "sellerId": "S003",
-      "buyerId": null,
-      "productListingDate": "28-09-2024",
-      "productPurchaseDate": "26-12-2024",
-      "id": "1c10"
+      "id": "c307",
+      "productId": "8b66",
+      "productName": "Smart Home Assistant",
+      "price": 5049.99,
+      "category": "Household Appliances",
+      "productImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrNpMfc5iMG1kQ2YylaSKlBMifqAUFhbxywhFFQlosZZaZRPqEj9JPVlbyxHIjmoYlBsk&usqp=CAU",
+      "sellerId": "S001",
+      "buyerId": "e9f4",
+      "productListingDate": "2024-08-10",
+      "productPurchaseDate": "31-08-2024"
     }
   ]
 }

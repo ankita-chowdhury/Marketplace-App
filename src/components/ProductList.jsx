@@ -6,10 +6,11 @@ import ProductCard from './ProductCard';
 const ProductList = ({userId,sortByValue,filterSectionItems}) => {
     const[productListItem,setProductListItem]=useState([]);
     const[filterProducts,setFilterProducts]=useState([]);
+    const[fetchProductList,setFetchProductList]=useState(false);
 
     useEffect(()=>{
         getProductListItem();
-    },[userId])
+    },[userId,fetchProductList])
     useEffect(()=>{
       sortByItems(sortByValue);
     },[sortByValue])
@@ -66,6 +67,7 @@ const ProductList = ({userId,sortByValue,filterSectionItems}) => {
             const filterItems  = tempProducts.filter((item)=>item.sellerId!==userId)
             setProductListItem(filterItems);
             setFilterProducts(filterItems);
+            setFetchProductList(false);
         } 
         catch (e) {
             console.log(e);
@@ -76,7 +78,7 @@ const ProductList = ({userId,sortByValue,filterSectionItems}) => {
       {
         filterProducts.map((item,index)=>{
             return(
-              <ProductCard key={index} item={item}/>
+              <ProductCard key={index} item={item} setFetchProductList={setFetchProductList}/>
           )
         })
       }

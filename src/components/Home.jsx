@@ -17,7 +17,6 @@ const Home = () => {
     const[userDetails,setUserDetails]=useState({});
     const[showAddItem,setShowAddItem]=useState(false);
     const[modalShow,setModalShow]=useState(false);
-    const[fetchAgain,setFetchAgain]=useState(false);
     const[showUpdate,setShowUpdate]=useState(false);
     const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
     const[addItemData,setAddItemData]=useState({
@@ -60,6 +59,7 @@ const[sortByValue,setSortByValue]=useState("");
         try{
           const response = await axios.get(`${BASE_URL}/users?email=${localData.email}`)
           setUserDetails(response.data[0]);
+         sessionStorage.setItem('userId',JSON.stringify(response.data[0].id));
         }
         catch(e){
           console.log(e);
