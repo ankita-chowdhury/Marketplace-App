@@ -578,9 +578,15 @@ input{
   display: flex;
   justify-content: flex-start;
 }
+.product-details{
+  margin-left: 10px;
+}
 .details-box-img{
   width: 300px;
   margin-right: 10px;
+  border: 1px solid #495f3943;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .details-box-img img{
   width: 100%;

@@ -18,9 +18,15 @@ const DetailsModal = ({setShowDetailsModal,showDetailsState,item}) => {
                     <span className='details-box-img'><img src={item.productImg} alt="" /></span>
                     <div className="product-details">
                         <h4>{item.productName}</h4>
-                        <h4>&#8377;{item.price}</h4>
+                        <h4>{item.rating>0 &&<span className={item.rating>4?"product-rating-green":item.rating<2?"product-rating-red":"product-rating-yellow"}>{item.rating}</span>} &#8377;{item.price}</h4>
                     </div>
                 </div>
+                {showDetailsState && <div className="show-details">
+                <h4 className="product-desc">Category: {item.category}</h4>
+                    <p className="product-desc">{item.productDescription}</p>
+                    <h5>Seller Id: {item.sellerId}</h5>
+                    <h5>Listed On: {item.productListingDate}</h5>
+                </div>}
               {!showDetailsState && <div className="add-item-form-btn">
               <button className='add-btn-save'>Buy</button>
               <button className='add-btn-cancel' onClick={()=>closeDetailsModal()}>Cancel</button>              
