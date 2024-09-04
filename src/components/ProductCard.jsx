@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import DetailsModal from './DetailsModal'
+import Sold from '../assets/images/sold.png'
 
 const ProductCard = ({item,showAddItem,deleteProduct,handleEditProductClick,setFetchProductList}) => {
     const[showDetailsModal,setShowDetailsModal]=useState(false);
@@ -16,6 +17,9 @@ const ProductCard = ({item,showAddItem,deleteProduct,handleEditProductClick,setF
   return (
     <>
       <div className="card-div">
+      {item.soldFlag && (
+            <div className="sold-out-div"><div className="sold-out-tag">Sold Out</div></div>
+          )}
         <div className="product-name"><h3>{item.productName}</h3></div>
         <div className="product-img"><img src={item.productImg} alt="" /></div>
         <div className="product-desc">{item.productDescription}</div>

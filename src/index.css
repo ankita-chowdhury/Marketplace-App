@@ -21,7 +21,10 @@ a {
 a:hover {
   color: #8ec467;
 }
-
+#root{
+  /* background-color: #6b865721; */
+  background-color: #6b865721
+}
 body {
   margin: 0;
   display: flex;

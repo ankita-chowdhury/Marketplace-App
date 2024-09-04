@@ -73,10 +73,10 @@
   "products": [
     {
       "productId": "P001",
-      "productName": "Smartphone",
+      "productName": "Apple iPhone 15 Plus",
       "productImg": "https://m.media-amazon.com/images/I/71v2jVh6nIL._SX679_.jpg",
-      "productDescription": "Latest model with advanced features",
-      "price": 140999.99,
+      "productDescription": "Apple iPhone 15 Plus (128GB, Pink), latest model with advanced features",
+      "price": 80599.99,
       "category": "Smartphone",
       "rating": 4.5,
       "sellerId": "U001",
@@ -87,10 +87,10 @@
     },
     {
       "productId": "P002",
-      "productName": "Laptop",
+      "productName": "Apple MacBook Pro ",
       "productImg": "https://m.media-amazon.com/images/I/51hJIsWMagL._AC_UF1000,1000_QL80_.jpg",
       "productDescription": "High-performance laptop for gaming and work",
-      "price": 150999.99,
+      "price": 328990.99,
       "category": "Electronics",
       "rating": 4.7,
       "sellerId": "U003",
@@ -101,7 +101,7 @@
     },
     {
       "productId": "P004",
-      "productName": "Smartwatch",
+      "productName": "Apple Watch Series 9 GPS",
       "productImg": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MT2Y3ref_VW_34FR+watch-case-41-aluminum-pink-nc-s9_VW_34FR+watch-face-41-aluminum-pink-s9_VW_34FR_WF_CO_GEO_IN?wid=5120&hei=3280&bgc=fafafa&trim=1&fmt=p-jpg&qlt=80&.v=Z0VkY0NhREJ6WjFzb3N5VEYrKzFoQjJXVW9BNEhuTURaNVlmRjZxRXZQeXlESTJEU21VQ3kwMTlnSk9SWXc3T1lmQTM3dWwxOEVOeWkrSnZJS3hUWHNZUk12MUVIVHRxUC9tRlNJeUZ4LzNvRFBDZ2ppL3VKbG5SaHlPeG9SOGNWRGRkNWd6OXhEb2lBTXYxZnpxbGdLMCtHMVlHSGttWG40UU14R241ekFhYmZuSTdFUnErS0g3SWYxazQrNDdyRzE3K0tORmZaUy9vOVdqTEp2dmJNMGdNL3BvRkdKVDVQdS91YnVnbnJuZ3JPZ0xXb3dPVUV6bytXY1hzR2F1cg==",
       "productDescription": "Smartwatch with health tracking features",
       "price": 41900.99,
@@ -159,7 +159,7 @@
       "productId": "P008",
       "productName": "Tablet",
       "productDescription": "High-resolution tablet with stylus support",
-      "productImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkTDLEHRuTiiduZzX8vIS6LoffnoCdap35Tw&s",
+      "productImg": "https://m.media-amazon.com/images/I/61uA2UVnYWL._SX679_.jpg",
       "price": 32790.99,
       "category": "Electronics",
       "rating": 4.5,
@@ -354,6 +354,19 @@
       "buyerId": "",
       "soldFlag": true,
       "productListingDate": "30-08-2024"
+    },
+    {
+      "id": "bf79",
+      "productName": "Apple iPhone 15 Pro Max",
+      "productImg": "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1708678757/Croma%20Assets/Communication/Mobiles/Images/300824_0_opb0vg.png?tr=w-640",
+      "productDescription": "Apple iPhone 15 Pro Max (512GB, Blue Titanium)",
+      "price": "173900.99",
+      "category": "Smartphone",
+      "rating": 0,
+      "sellerId": "e9f4",
+      "buyerId": "",
+      "soldFlag": false,
+      "productListingDate": "31-08-2024"
     }
   ],
   "transactionHistory": [

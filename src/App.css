@@ -70,7 +70,7 @@ input{
 }
 .box-container{
   width: 100%;
-  background-color: #6b865721;
+  /* background-color: #6b865721; */
 }
 .nav-component{
   padding: 1rem;
@@ -236,6 +236,7 @@ input{
   padding: 20px 40px;
   background-color: #fff;
   color: #3A5B22;
+  overflow: hidden;
 }
 .product-img{
   display: flex;
@@ -596,6 +597,25 @@ input{
   width: 100%;
   
 }
+ .sold-out-tag{
+  background-color: #45873e85;
+  color: #fff;
+  margin-left: 15px;
+  padding: 5px;
+  width: 80px;
+  text-align: center; 
+  transform: rotate(45deg);  
+ }
+ .sold-out-div{
+  width: 90px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  margin-top: -20px;
+  margin-left: 245px;
+  overflow: hidden;
+ }
 
 
 
