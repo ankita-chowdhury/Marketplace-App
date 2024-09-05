@@ -159,7 +159,7 @@ const Home = () => {
 
   const saveProductEdit = async () => {
     try {
-      const response = await axios.put(
+      const response = await axios.patch(
         `${BASE_URL}/products/${currentEditingProductId}`,
         addItemData
       );

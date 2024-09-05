@@ -249,6 +249,9 @@ input{
   color: #3A5B22;
   overflow: hidden;
 }
+.more-desc{
+  font-weight: 600;
+}
 .product-img{
   display: flex;
   align-items: center;
@@ -395,7 +398,7 @@ input{
   margin-left: 5px;
 }
 .modal{
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   /* border: 1px solid black; */

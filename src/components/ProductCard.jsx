@@ -34,7 +34,7 @@ const ProductCard = ({
         <div className="product-img">
           <img src={item.productImg} alt="" />
         </div>
-        <div className="product-desc">{item.productDescription}</div>
+        <div className="product-desc">{item.productDescription.slice(0,50)}{item.productDescription.length>50&& <span className="more-desc"> . . .</span> }</div>
 
         <div className="product-price">
           <h4>
