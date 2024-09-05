@@ -10,14 +10,25 @@ input{
 }
 .outer-container{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 30px;
+  color: #3A5B22;
 }
 .inner-container{
   /* border: 1px solid rgba(0,0,0,0.5); */
-  min-height: 450px;
+  /* min-height: 450px;
   width: 404px;
   gap: 10px;
   border-radius: 10px;
-  align-content: center;
+  align-content: center; */
+  padding: 30px;
+  width: 35%;
+  min-width: 360px;
+  box-shadow: 0px 0px 4px 0px #3A5B22;
+  background-color: #fff;
+  border-radius: 10px;
 }
 .heading-container h2{
  color: #3A5B22;
@@ -597,7 +608,7 @@ input{
   width: 100%;
   
 }
- .sold-out-tag{
+ /* .sold-out-tag{
   background-color: #45873e85;
   color: #fff;
   margin-left: 15px;
@@ -615,7 +626,57 @@ input{
   margin-top: -20px;
   margin-left: 245px;
   overflow: hidden;
- }
+ } */
+ .sold-out-div {
+  width: 90px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 85px;
+  margin-top: -20px;
+  margin-left: 245px;
+  overflow: hidden;
+}
 
+.sold-out-tag {
+  background-color: #45873e85;
+  color: #fff;
+  margin-left: 15px;
+  padding: 5px;
+  width: 80px;
+  text-align: center;
+  transform: rotate(45deg);
+  position: relative; /* Ensure pseudo-elements are positioned relative to this element */
+}
+
+.sold-out-tag::before,
+.sold-out-tag::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+}
+
+.sold-out-tag::before {
+  border-width: 0px 27px 35px 2px;
+  border-color: #45873e85;
+  left: -30px;
+  top: 0px;
+}
+
+.sold-out-tag::after {
+  border-width: 32px 0 0 28px;
+  border-color: #45873e85;
+  right: -30px;
+  bottom: 0px;
+}
+
+.count-div span{
+  font-weight: 500;
+  color: #3A5B22;
+  letter-spacing: 0.5px;
+}
+/* .count-div span{
+  color: #fff;
+} */
 
 

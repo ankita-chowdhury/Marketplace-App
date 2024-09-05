@@ -3,7 +3,7 @@ import axios from 'axios'
 import BASE_URL from './ApiServices';
 import ProductCard from './ProductCard';
 
-const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemData,setCurrentEditingProductId,fetchMyProducts,setFetchMyProducts,sortByValue,filterSectionItems}) => {
+const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemData,setCurrentEditingProductId,fetchMyProducts,setFetchMyProducts,sortByValue,filterSectionItems,setCouponCount,setSoldCouponCount}) => {
     const [myProducts,setMyProducts]=useState([]);
     const[filterProducts,setFilterProducts]=useState([]);
     useEffect(()=>{
@@ -32,6 +32,8 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
           activeFilters.includes(item.category)
         );
       }
+      setCouponCount(tempProducts.length);
+      soldItemsCount(tempProducts);
       setFilterProducts(tempProducts);
     };
 
@@ -60,6 +62,13 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
       setFilterProducts(tempProducts);
     }
 
+    const soldItemsCount = (items) =>{
+      const tempItems=[...items];
+      const soldCount = tempItems.reduce((acc,item)=>{
+          return item.soldFlag===true? acc+1 : acc;
+      },0);
+      setSoldCouponCount(soldCount);
+  }
     const getMyProductList = async() =>{
         try{
             const response = await axios.get(`${BASE_URL}/products`,
@@ -67,6 +76,8 @@ const MyProducts = ({userId,setModalShow,setShowUpdate,showAddItem,setAddItemDat
                 params:{sellerId:userId}
             }
             );
+            setCouponCount(response.data.length);
+            soldItemsCount(response.data);
             setMyProducts(response.data);
             setFilterProducts(response.data);
             setFetchMyProducts(false);

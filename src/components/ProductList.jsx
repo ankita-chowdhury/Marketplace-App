@@ -3,7 +3,7 @@ import axios from 'axios';
 import BASE_URL from './ApiServices';
 import ProductCard from './ProductCard';
 
-const ProductList = ({userId,sortByValue,filterSectionItems}) => {
+const ProductList = ({userId,sortByValue,filterSectionItems,setCouponCount,setSoldCouponCount}) => {
     const[productListItem,setProductListItem]=useState([]);
     const[filterProducts,setFilterProducts]=useState([]);
     const[fetchProductList,setFetchProductList]=useState(false);
@@ -32,6 +32,8 @@ const ProductList = ({userId,sortByValue,filterSectionItems}) => {
           activeFilters.includes(item.category)
         );
       }
+      setCouponCount(tempProducts.length);
+      soldItemsCount(tempProducts);
       setFilterProducts(tempProducts);
     };
 
@@ -60,14 +62,25 @@ const ProductList = ({userId,sortByValue,filterSectionItems}) => {
       setFilterProducts(tempProducts);
     }
 
+    const soldItemsCount = (items) =>{
+        const tempItems=[...items];
+        const soldCount = tempItems.reduce((acc,item)=>{
+            return item.soldFlag===true? acc+1 : acc;
+        },0);
+        setSoldCouponCount(soldCount);
+    }
+
+
    const getProductListItem = async() =>{
         try {
             const response = await axios.get(`${BASE_URL}/products`);
             const tempProducts = response.data;
             const filterItems  = tempProducts.filter((item)=>item.sellerId!==userId)
+            setCouponCount(filterItems.length);
+            soldItemsCount(filterItems);
             setProductListItem(filterItems);
             setFilterProducts(filterItems);
-            setFetchProductList(false);
+            setFetchProductList(false);            
         } 
         catch (e) {
             console.log(e);

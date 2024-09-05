@@ -109,7 +109,7 @@
       "rating": 4.6,
       "sellerId": "U003",
       "buyerId": null,
-      "soldFlag": false,
+      "soldFlag": true,
       "productListingDate": "2024-08-05",
       "id": "804d"
     },
@@ -367,6 +367,16 @@
       "buyerId": "",
       "soldFlag": false,
       "productListingDate": "31-08-2024"
+    },
+    {
+      "productName": "Flower bouquet",
+      "price": "1999.99",
+      "category": "Home Decor & Lights",
+      "productDescription": "Orchids are the very essence of luxury and grandeur",
+      "productImg": "https://assets.flowersnfruits.com/uploads/product-pics/1632978164_10.jpg",
+      "sellerId": "e9f4",
+      "productListingDate": "05-09-2024",
+      "id": "9eaf"
     }
   ],
   "transactionHistory": [
@@ -429,6 +439,18 @@
       "buyerId": "249d",
       "productListingDate": "29-08-2024",
       "productPurchaseDate": "30-08-2024"
+    },
+    {
+      "id": "b7b6",
+      "productId": "804d",
+      "productName": "Apple Watch Series 9 GPS",
+      "price": 41900.99,
+      "category": "Electronics",
+      "productImg": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/MT2Y3ref_VW_34FR+watch-case-41-aluminum-pink-nc-s9_VW_34FR+watch-face-41-aluminum-pink-s9_VW_34FR_WF_CO_GEO_IN?wid=5120&hei=3280&bgc=fafafa&trim=1&fmt=p-jpg&qlt=80&.v=Z0VkY0NhREJ6WjFzb3N5VEYrKzFoQjJXVW9BNEhuTURaNVlmRjZxRXZQeXlESTJEU21VQ3kwMTlnSk9SWXc3T1lmQTM3dWwxOEVOeWkrSnZJS3hUWHNZUk12MUVIVHRxUC9tRlNJeUZ4LzNvRFBDZ2ppL3VKbG5SaHlPeG9SOGNWRGRkNWd6OXhEb2lBTXYxZnpxbGdLMCtHMVlHSGttWG40UU14R241ekFhYmZuSTdFUnErS0g3SWYxazQrNDdyRzE3K0tORmZaUy9vOVdqTEp2dmJNMGdNL3BvRkdKVDVQdS91YnVnbnJuZ3JPZ0xXb3dPVUV6bytXY1hzR2F1cg==",
+      "sellerId": "U003",
+      "buyerId": "e9f4",
+      "productListingDate": "2024-08-05",
+      "productPurchaseDate": "05-09-2024"
     }
   ]
 }
