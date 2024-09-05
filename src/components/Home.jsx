@@ -44,6 +44,7 @@ const Home = () => {
   const [sortByValue, setSortByValue] = useState("");
   const [couponCount, setCouponCount] = useState(0);
   const [soldCouponCount, setSoldCouponCount] = useState(0);
+  const[actionMsg,setActionMsg]=useState("");
 
   useEffect(() => {
     const loginKey = localStorage.getItem("loginKey");
@@ -146,6 +147,10 @@ const Home = () => {
       .then((response) => {
         setModalShow(false);
         setFetchMyProducts(true);
+        setActionMsg("Product Added Successfully!");
+      setTimeout(()=>{
+        setActionMsg("");
+      },3000)
       })
       .catch((e) => {
         console.log(e);
@@ -161,6 +166,10 @@ const Home = () => {
       setModalShow(false);
       // setFetchAgain(true);
       setFetchMyProducts(true);
+      setActionMsg("Product Details Updated Successfully!");
+      setTimeout(()=>{
+        setActionMsg("");
+      },3000)
     } catch (e) {
       console.log(e);
     }
@@ -179,7 +188,8 @@ const Home = () => {
             My Products
           </button>
         </div>
-        <div className="count-div"><span>Total Items: {couponCount} | Sold Items: {soldCouponCount}</span></div>
+        {actionMsg==="" && <div className="count-div"><span>Total Items: {couponCount} | Sold Items: {soldCouponCount}</span></div>}
+        {actionMsg!=="" && <div className="action-msg-div">{actionMsg}</div>}
         <div className="add-and-sort-section">
           {showAddItem && (
             <div
@@ -225,6 +235,7 @@ const Home = () => {
               filterSectionItems={filterSectionItems}
               setCouponCount={setCouponCount}
               setSoldCouponCount={setSoldCouponCount}
+              setActionMsg={setActionMsg}
             />
           ) : (
             <ProductList
@@ -233,6 +244,7 @@ const Home = () => {
               filterSectionItems={filterSectionItems}
               setCouponCount={setCouponCount}
               setSoldCouponCount={setSoldCouponCount}
+              setActionMsg={setActionMsg}
             />
           )}
         </div>

@@ -678,5 +678,12 @@ input{
 /* .count-div span{
   color: #fff;
 } */
-
+.action-msg-div{
+  color: #3A5B22;
+  border: 1px solid #3A5B22;
+  padding: 5px 20px;
+  border-radius: 10px;
+  background-color: #7ebb763e;
+  font-weight: 600;
+}
 
