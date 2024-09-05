@@ -113,7 +113,7 @@ const Home = () => {
       });
     } else if (inputName === "item-price") {
       setAddItemData((oldItems) => {
-        return { ...oldItems, price: inputVal };
+        return { ...oldItems, price: Number(inputVal) };
       });
     } else if (inputName === "product-category") {
       setAddItemData((oldItems) => {
@@ -274,7 +274,7 @@ const Home = () => {
               <label htmlFor="item-price">Product Price</label>
               <div>
                 <input
-                  type="text"
+                  type="number"
                   value={addItemData.price}
                   id="item-price"
                   placeholder="Enter product price"

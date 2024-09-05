@@ -199,22 +199,22 @@
     },
     {
       "productName": "Flower Vase",
-      "price": "3500",
+      "price": 3500,
       "category": "Home Decor & Lights",
       "productDescription": "Japanese flower vase ",
       "productImg": "https://m.media-amazon.com/images/I/619vvcyPS4L.jpg",
       "sellerId": "e9f4",
-      "productListingDate": "30-08-2024",
+      "productListingDate": "05-09-2024",
       "id": "4967"
     },
     {
       "productName": "Nike Air Max 90",
-      "price": "10999.99",
+      "price": 10999.99,
       "category": "Footwear",
       "productDescription": "Nike Air Max 90\nWomen's Shoes",
       "productImg": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eacfafe6-842a-4f87-9835-997e81e9b12b/WMNS+AIR+MAX+90.png",
       "sellerId": "e9f4",
-      "productListingDate": "30-08-2024",
+      "productListingDate": "05-09-2024",
       "id": "a32d"
     },
     {
@@ -239,17 +239,12 @@
       "soldFlag": true
     },
     {
-      "id": "a4b1",
       "productName": "Nike Air Zoom Tempo Next",
-      "productImg": "https://believeintherun.com/wp-content/uploads/2020/10/Nike-Air-Zoom-Tempo-Next-feature-left.jpg",
-      "productDescription": "Nike Air Zoom Tempo NEXT%",
-      "price": "12317.99",
+      "price": "12318.99",
       "category": "Footwear",
-      "rating": 0,
-      "sellerId": "e9f4",
-      "buyerId": null,
-      "soldFlag": false,
-      "productListingDate": "22-08-2024"
+      "productDescription": "Nike Air Zoom Tempo NEXT%",
+      "productImg": "https://believeintherun.com/wp-content/uploads/2020/10/Nike-Air-Zoom-Tempo-Next-feature-left.jpg",
+      "id": "a4b1"
     },
     {
       "productName": "Night Lamp 2",

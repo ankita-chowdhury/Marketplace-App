@@ -33,7 +33,7 @@ const DetailsModal = ({
         const bodyData = {
           productId: item.id,
           productName: item.productName,
-          price: item.price,
+          price: Number(item.price),
           category: item.category,
           productImg: item.productImg,
           sellerId: item.sellerId,
