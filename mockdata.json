@@ -68,6 +68,21 @@
       "dateOfBirth": "",
       "address": "",
       "contactNo": ""
+    },
+    {
+      "id": "7428",
+      "username": "New User",
+      "email": "newuser@gmail.com",
+      "password": "new@123",
+      "dateOfBirth": "",
+      "address": {
+        "adressLine1": "",
+        "city": "",
+        "state": "",
+        "country": "",
+        "zipCode": ""
+      },
+      "contactNo": ""
     }
   ],
   "products": [
@@ -199,7 +214,7 @@
     },
     {
       "productName": "Flower Vase",
-      "price": 3520,
+      "price": 3510,
       "category": "Home Decor & Lights",
       "productDescription": "Japanese flower vase ",
       "productImg": "https://m.media-amazon.com/images/I/619vvcyPS4L.jpg",
@@ -209,12 +224,12 @@
     },
     {
       "productName": "Nike Air Max 90",
-      "price": 10999.99,
+      "price": 11999.99,
       "category": "Footwear",
       "productDescription": "Nike Air Max 90\nWomen's Shoes",
       "productImg": "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/eacfafe6-842a-4f87-9835-997e81e9b12b/WMNS+AIR+MAX+90.png",
       "sellerId": "e9f4",
-      "productListingDate": "05-09-2024",
+      "productListingDate": "06-09-2024",
       "id": "a32d"
     },
     {
@@ -375,6 +390,32 @@
       "sellerId": "e9f4",
       "productListingDate": "05-09-2024",
       "id": "9eaf"
+    },
+    {
+      "id": "5e4c",
+      "productName": "Xbox Series X",
+      "productImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYFRrbQ9WDJ6hiIreMaoOfVVLfR6gzKlr5bw&s",
+      "productDescription": "Discover the fastest, most powerful Xbox ever with the Xbox Series X. Enjoy 4K gaming at up to 120 frames per second ",
+      "price": 55990.99,
+      "category": "Gaming Product",
+      "rating": 0,
+      "sellerId": "7428",
+      "buyerId": "",
+      "soldFlag": false,
+      "productListingDate": "06-09-2024"
+    },
+    {
+      "id": "e27b",
+      "productName": "Women watch",
+      "productImg": "https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw82e6a862/images/Titan/Catalog/9710SM01_1.jpg?sw=600&sh=600",
+      "productDescription": "Titan Raga Blue Dial Quartz Analog Metal Strap watch for Women",
+      "price": 13999.99,
+      "category": "",
+      "rating": 0,
+      "sellerId": "7428",
+      "buyerId": "",
+      "soldFlag": false,
+      "productListingDate": "06-09-2024"
     }
   ],
   "transactionHistory": [

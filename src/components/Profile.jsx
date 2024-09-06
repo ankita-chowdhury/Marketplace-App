@@ -9,6 +9,7 @@ const Profile = () => {
   const[showAddress,setShowAddress]=useState(false);
   const[userData,setUserData]=useState([]);
   const[editEnable,setEditEnable]=useState(true);
+  const[actionMsg,setActionMsg]=useState("");
 
   useEffect(()=>{
     getProfileDetails();
@@ -99,6 +100,10 @@ const Profile = () => {
     .then((res)=>{
         console.log("response save profile",res.data);
         setEditEnable(true);
+        setActionMsg("Profile Updated Successfully!");
+        setTimeout(()=>{
+          setActionMsg("");
+        },3000)
     })
     .catch((e)=>{
       console.log(e);
@@ -113,6 +118,7 @@ const Profile = () => {
 
           <h2 className='heading-profile'>My Profile <span onClick={()=>handleEditEnable()}><img src={Edit} alt="" /></span></h2>
           <hr />
+          {actionMsg!=="" && <div className="action-msg-div">{actionMsg}</div>}
           <label htmlFor="username">Username</label>
           <div>
             <input type="text" id='username' value={userData.username} disabled={editEnable} name='username' onChange={(e)=>updateUserData(e.target.value,'username')} placeholder='Update your username'/>
