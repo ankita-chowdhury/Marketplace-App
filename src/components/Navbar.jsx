@@ -46,7 +46,7 @@ const Navbar = ({ setSearchResult }) => {
             <Link className="edit-user-profile" to={"/profile"}>
               Edit Profile
             </Link>
-            <p onClick={() => handleLogout()}>
+            <p onClick={() => handleLogout()} className="logout-icon-style">
               Logout <img src={LogoutIcon} alt="" />
             </p>
           </div>

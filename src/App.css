@@ -690,5 +690,16 @@ input{
   background-color: #7ebb763e;
   font-weight: 600;
 }
-
+.logout-icon-style{
+  font-weight: 500;
+}
+.logout-icon-style:hover{
+  color: #8ec467;
+}
+.logout-icon-style img{
+  font-weight: 500;
+}
+.logout-icon-style img:hover{
+  opacity: 60%;
+}
 

@@ -7,10 +7,11 @@ import Updown from "../assets/images/Updown.png"
 const Transaction = () => {
   const[purchaseItem,setPurchaseItem]=useState([]); 
   const[sortState,setSortState]=useState('asc');
+  const[searchResult,setSearchResult]=useState("");
 
   useEffect(()=>{
     getTransactionList();
-  },[])
+  },[searchResult])
 
   const getTransactionList = async() =>{
     try{
@@ -20,7 +21,8 @@ const Transaction = () => {
         params:
         {buyerId:parsedUserId}
       });
-      setPurchaseItem(response.data);
+      const filterData = response.data.filter((item)=>item.productName.toLowerCase().includes(searchResult.toLowerCase())?item:"");
+      setPurchaseItem(filterData);
     }
     catch(e){
       console.log(e);
@@ -68,7 +70,7 @@ const Transaction = () => {
 }
   return (
     <div className='box-container'>
-      <Navbar/>
+      <Navbar setSearchResult={setSearchResult}/>
       <div className="inner-transaction-div">
         <h2>Transaction History</h2>
         <hr />
