@@ -10,6 +10,7 @@ const ProductList = ({
   setCouponCount,
   setSoldCouponCount,
   setActionMsg,
+  searchResult
 }) => {
   const [productListItem, setProductListItem] = useState([]);
   const [filterProducts, setFilterProducts] = useState([]);
@@ -17,13 +18,15 @@ const ProductList = ({
 
   useEffect(() => {
     getProductListItem();
-  }, [userId, fetchProductList]);
+  }, [userId, fetchProductList,searchResult]);
   useEffect(() => {
     sortByItems(sortByValue);
   }, [sortByValue]);
   useEffect(() => {
     applyFilters();
   }, [filterSectionItems]);
+  
+
   const applyFilters = () => {
     const activeFilters = filterSectionItems
       .filter((item) => item.check)
@@ -87,8 +90,8 @@ const ProductList = ({
       const response = await axios.get(`${BASE_URL}/products`);
       const tempProducts = response.data;
       const filterItems = tempProducts.filter(
-        (item) => item.sellerId !== userId
-      );
+        (item) => item.sellerId !== userId        
+      ).filter((item)=>item.productName.toLowerCase().includes(searchResult.toLowerCase())?item:"");      
       setCouponCount(filterItems.length);
       soldItemsCount(filterItems);
       setProductListItem(filterItems);

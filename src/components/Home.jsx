@@ -9,6 +9,7 @@ import MyProducts from "./MyProducts";
 import ProductList from "./ProductList";
 import CloseIcon from "../assets/images/close.png";
 
+
 const Home = () => {
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState({});
@@ -16,6 +17,7 @@ const Home = () => {
   const [modalShow, setModalShow] = useState(false);
   const [showUpdate, setShowUpdate] = useState(false);
   const [currentEditingProductId, setCurrentEditingProductId] = useState(null);
+  const[searchResult,setSearchResult]=useState("");
   const [addItemData, setAddItemData] = useState({
     productName: "",
     productImg: "",
@@ -177,7 +179,7 @@ const Home = () => {
 
   return (
     <div className="box-container">
-      <Navbar />
+      <Navbar setSearchResult={setSearchResult}/>
       {/* <div className="welcome-msg"><h2>Welcome Back!</h2></div> */}
       <div className="top-section">
         <div className="select-section">
@@ -236,6 +238,7 @@ const Home = () => {
               setCouponCount={setCouponCount}
               setSoldCouponCount={setSoldCouponCount}
               setActionMsg={setActionMsg}
+              searchResult={searchResult}
             />
           ) : (
             <ProductList
@@ -245,6 +248,7 @@ const Home = () => {
               setCouponCount={setCouponCount}
               setSoldCouponCount={setSoldCouponCount}
               setActionMsg={setActionMsg}
+              searchResult={searchResult}
             />
           )}
         </div>

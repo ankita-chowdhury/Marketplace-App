@@ -4,9 +4,10 @@ import Search from "../assets/images/Search.svg";
 import ProfileIcon from "../assets/images/User-icon.png";
 import LogoutIcon from "../assets/images/Logout-icon.png";
 
-const Navbar = () => {
+const Navbar = ({ setSearchResult }) => {
   const navigate = useNavigate();
   const [logoutPopup, setLogoutPopup] = useState(false);
+
   const handleShow = () => {
     if (logoutPopup === true) {
       setLogoutPopup(false);
@@ -17,6 +18,9 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem("loginKey");
     navigate("/login");
+  };
+  const handleSearch = (inputVal) => {
+    setSearchResult(inputVal);
   };
   return (
     <nav className="nav-component">
@@ -33,13 +37,15 @@ const Navbar = () => {
       </div>
       <div className="search-container">
         <img src={Search} alt="" />
-        <input type="text" />
+        <input type="text" onChange={(e) => handleSearch(e.target.value)} />
       </div>
       <div className="profile-icon" onClick={() => handleShow()}>
         <img src={ProfileIcon} alt="" />
         {logoutPopup && (
           <div className="logout-div">
-            <Link className="edit-user-profile" to={"/profile"}>Edit Profile</Link>
+            <Link className="edit-user-profile" to={"/profile"}>
+              Edit Profile
+            </Link>
             <p onClick={() => handleLogout()}>
               Logout <img src={LogoutIcon} alt="" />
             </p>
