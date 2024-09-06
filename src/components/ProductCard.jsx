@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import DetailsModal from "./DetailsModal";
-import Sold from "../assets/images/sold.png";
 
 const ProductCard = ({
   item,

@@ -139,6 +139,7 @@ input{
   margin-top: 2rem;
   padding: 20px;
   right: 6.5%;
+  text-align: left;
 }
 .logout-div img{
   height: 25px;
@@ -689,4 +690,5 @@ input{
   background-color: #7ebb763e;
   font-weight: 600;
 }
+
 
