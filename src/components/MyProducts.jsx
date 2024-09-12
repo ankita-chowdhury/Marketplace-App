@@ -60,23 +60,23 @@ const MyProducts = ({
       tempProducts.sort((a, b) => b.price - a.price);
     } else if (inputFieldVal === "newFirst") {
       tempProducts.sort((a, b) => {
-        const dateA = new Date(
-          a.productListingDate.split("-").reverse().join("-")
-        );
-        const dateB = new Date(
-          b.productListingDate.split("-").reverse().join("-")
-        );
+        const dateA = a.productListingDate
+          ? new Date(a.productListingDate.split("-").reverse().join("-"))
+          : new Date(0); // Fallback to a very old date if undefined
+        const dateB = b.productListingDate
+          ? new Date(b.productListingDate.split("-").reverse().join("-"))
+          : new Date(0); // Fallback to a very old date if undefined
         return dateB - dateA;
       });
     } else if (inputFieldVal === "oldItems") {
       tempProducts.sort((a, b) => {
-        const dateA = new Date(
-          a.productListingDate.split("-").reverse().join("-")
-        );
-        const dateB = new Date(
-          b.productListingDate.split("-").reverse().join("-")
-        );
-        return dateA - dateB;
+        const dateA = a.productListingDate
+        ? new Date(a.productListingDate.split("-").reverse().join("-"))
+        : new Date(); // Fallback to the current date if undefined
+      const dateB = b.productListingDate
+        ? new Date(b.productListingDate.split("-").reverse().join("-"))
+        : new Date(); // Fallback to the current date if undefined
+      return dateA - dateB;
       });
     }
     setFilterProducts(tempProducts);
@@ -146,6 +146,7 @@ const MyProducts = ({
             handleEditProductClick={handleEditProductClick}
             deleteProduct={deleteProduct}
             showAddItem={showAddItem}
+            
           />
         );
       })}

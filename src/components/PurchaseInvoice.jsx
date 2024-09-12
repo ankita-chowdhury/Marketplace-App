@@ -46,6 +46,7 @@ const PurchaseInvoice = ({ setPurchaseModal, item }) => {
               {item.productDescription}
             </p>
             <h5>Seller Id: {item.sellerId}</h5>
+            <h5>Buyer Id: {item.buyerId}</h5>
             <h5>Listed On: {item.productListingDate}</h5>
             <h3 className="border-up-dashed">
               Total Price: &#8377;{item.price}
