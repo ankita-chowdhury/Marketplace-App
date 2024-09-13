@@ -59,11 +59,20 @@ const PurchaseInvoice = ({ setPurchaseModal, item, setFetchAgain }) => {
   
     // Create a PDF with the canvas data
     const pdf = new jsPDF('p', 'mm', 'a3');
-    const imageProps = pdf.getImageProperties(data);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imageProps.height * pdfWidth) / imageProps.width;
   
-    pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
+    // Add padding
+    const padding = 10; // 10mm padding
+    const pdfWidth = pdf.internal.pageSize.getWidth() - 2 * padding;
+    const pdfHeight = pdf.internal.pageSize.getHeight() - 2 * padding;
+  
+    // Get image properties to maintain aspect ratio
+    const imageProps = pdf.getImageProperties(data);
+    const imageWidth = pdfWidth;
+    const imageHeight = (imageProps.height * imageWidth) / imageProps.width;
+  
+    // Add image to PDF with padding
+    pdf.addImage(data, 'PNG', padding, padding, imageWidth, imageHeight);
+  
     pdf.save('transaction-history.pdf');
   
     setActionMsg("Invoice Downloaded Successfully!");
@@ -71,6 +80,7 @@ const PurchaseInvoice = ({ setPurchaseModal, item, setFetchAgain }) => {
       setActionMsg("");
     }, 3000);
   };
+  
   
 
   return (
