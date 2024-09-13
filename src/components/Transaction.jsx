@@ -11,10 +11,11 @@ const Transaction = () => {
   const [searchResult, setSearchResult] = useState("");
   const [purchaseModal, setPurchaseModal] = useState(false);
   const [currItem, setCurrItem] = useState({});
+  const[fetchAgain,setFetchAgain]=useState(false);
 
   useEffect(() => {
     getTransactionList();
-  }, [searchResult]);
+  }, [searchResult,fetchAgain]);
 
   const getTransactionList = async () => {
     try {
@@ -29,7 +30,9 @@ const Transaction = () => {
           : ""
       );
       setPurchaseItem(filterData);
+      setFetchAgain(false);
     } catch (e) {
+      setFetchAgain(false);
       console.log(e);
     }
   };
@@ -154,6 +157,7 @@ const Transaction = () => {
               {purchaseModal && (
                 <PurchaseInvoice
                   setPurchaseModal={setPurchaseModal}
+                  setFetchAgain={setFetchAgain}
                   item={currItem}
                 />
               )}

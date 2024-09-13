@@ -93,7 +93,7 @@
       "productDescription": "Apple iPhone 15 Plus (128GB, Pink), latest model with advanced features",
       "price": 80599.99,
       "category": "Smartphone",
-      "rating": 4.5,
+      "rating": "4.0",
       "sellerId": "U001",
       "buyerId": "U002",
       "soldFlag": true,
@@ -107,7 +107,7 @@
       "productDescription": "High-performance laptop for gaming and work",
       "price": 328990.99,
       "category": "Electronics",
-      "rating": 4.7,
+      "rating": "3.0",
       "sellerId": "U003",
       "buyerId": "U001",
       "soldFlag": true,
@@ -121,7 +121,7 @@
       "productDescription": "Smartwatch with health tracking features",
       "price": 41900.99,
       "category": "Electronics",
-      "rating": 4.6,
+      "rating": "2.0",
       "sellerId": "U003",
       "buyerId": null,
       "soldFlag": true,
@@ -205,7 +205,7 @@
       "productImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrNpMfc5iMG1kQ2YylaSKlBMifqAUFhbxywhFFQlosZZaZRPqEj9JPVlbyxHIjmoYlBsk&usqp=CAU",
       "price": 5049.99,
       "category": "Household Appliances",
-      "rating": 1.8,
+      "rating": "4.0",
       "sellerId": "S001",
       "buyerId": null,
       "soldFlag": true,
@@ -273,7 +273,8 @@
       "sellerId": "249d",
       "productListingDate": "24-08-2024",
       "id": "ae29",
-      "soldFlag": true
+      "soldFlag": true,
+      "rating": "3.0"
     },
     {
       "productName": "Plant ",
@@ -293,7 +294,9 @@
       "productImg": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/6/1/61c9b6fTRBHL130-Black_1.jpg?rnd=20200526195200&tr=w-512",
       "sellerId": "249d",
       "productListingDate": "24-08-2024",
-      "id": "990e"
+      "id": "990e",
+      "rating": "2.0",
+      "soldFlag": true
     },
     {
       "id": "01f5",
@@ -429,6 +432,19 @@
       "buyerId": "",
       "soldFlag": false,
       "productListingDate": "13-09-2024"
+    },
+    {
+      "id": "e6bb",
+      "productName": "Cotton Gown ",
+      "productImg": "https://m.media-amazon.com/images/I/61-MlTeQ1lL.jpg",
+      "productDescription": "MGHY LAVANYA BOUTIQUE Women's Flared Embroidered Cotton Gown ",
+      "price": 2999.99,
+      "category": "Clothes",
+      "rating": 0,
+      "sellerId": "e9f4",
+      "buyerId": "",
+      "soldFlag": false,
+      "productListingDate": "13-09-2024"
     }
   ],
   "transactionHistory": [
@@ -442,7 +458,8 @@
       "sellerId": "U001",
       "buyerId": "e9f4",
       "productListingDate": "2024-07-01",
-      "productPurchaseDate": "31-08-2024"
+      "productPurchaseDate": "31-08-2024",
+      "rating": "4.0"
     },
     {
       "id": "c307",
@@ -454,7 +471,8 @@
       "sellerId": "S001",
       "buyerId": "e9f4",
       "productListingDate": "2024-08-10",
-      "productPurchaseDate": "31-08-2024"
+      "productPurchaseDate": "31-08-2024",
+      "rating": "4.0"
     },
     {
       "id": "3cda",
@@ -466,7 +484,8 @@
       "sellerId": "249d",
       "buyerId": "e9f4",
       "productListingDate": "24-08-2024",
-      "productPurchaseDate": "31-08-2024"
+      "productPurchaseDate": "31-08-2024",
+      "rating": "3.0"
     },
     {
       "id": "af6e",
@@ -502,7 +521,8 @@
       "sellerId": "U003",
       "buyerId": "e9f4",
       "productListingDate": "2024-08-05",
-      "productPurchaseDate": "05-09-2024"
+      "productPurchaseDate": "05-09-2024",
+      "rating": "2.0"
     },
     {
       "id": "ba71",
@@ -514,19 +534,21 @@
       "sellerId": "U003",
       "buyerId": "e9f4",
       "productListingDate": "2024-08-01",
-      "productPurchaseDate": "06-09-2024"
+      "productPurchaseDate": "06-09-2024",
+      "rating": "3.0"
     },
     {
-      "id": "2a1e",
-      "productId": "93cc",
-      "productName": "Apple iPhone 15 Plus",
-      "price": 80599.99,
-      "category": "Smartphone",
-      "productImg": "https://m.media-amazon.com/images/I/71v2jVh6nIL._SX679_.jpg",
-      "sellerId": "U001",
+      "id": "19b3",
+      "productId": "990e",
+      "productName": "Heels",
+      "price": 2599.99,
+      "category": "Footwear",
+      "productImg": "https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/6/1/61c9b6fTRBHL130-Black_1.jpg?rnd=20200526195200&tr=w-512",
+      "sellerId": "249d",
       "buyerId": "e9f4",
-      "productListingDate": "2024-07-01",
-      "productPurchaseDate": "06-09-2024"
+      "rating": "2.0",
+      "productListingDate": "24-08-2024",
+      "productPurchaseDate": "13-09-2024"
     }
   ]
 }

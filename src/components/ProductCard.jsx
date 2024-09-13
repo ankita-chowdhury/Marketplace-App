@@ -40,7 +40,7 @@ const ProductCard = ({
             {!showAddItem && item.rating > 0 && (
               <span
                 className={
-                  item.rating > 4
+                  item.rating >= 4
                     ? "product-rating-green"
                     : item.rating < 2
                     ? "product-rating-red"

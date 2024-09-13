@@ -38,6 +38,7 @@ const DetailsModal = ({
           productImg: item.productImg,
           sellerId: item.sellerId,
           buyerId: parsedUserId,
+          rating: item.rating,
           productListingDate: item.productListingDate,
           productPurchaseDate: fomattedDate,
         };
